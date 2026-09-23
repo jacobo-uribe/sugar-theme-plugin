@@ -1,6 +1,6 @@
 # Sugar theme catalog index
 
-Sugar 2.0.0-dev · catalog `ce7aa069e848` · generated, do not edit.
+Sugar 2.0.0-dev · catalog `301f23df2793` · generated, do not edit.
 
 One line per section and block, grouped the way the theme editor's add menu groups them. This answers whether something exists and roughly what it does. For how a component works, its settings and its known issues, fetch its docs from the Sugar theme MCP by slug (`get_component`). The MCP's `list_catalog` is the live version of this list.
 
@@ -310,21 +310,21 @@ Contents: 206 blocks, 45 sections.
 - **Benefit Card** `benefit-card` — Place one benefit inside a Media Benefits Grid, with an icon, a label, and an optional description.
 - **Custom Buy Box** `featured-product-info` — (summary pending)
 - **Custom Product Media** `custom-product-media` — Show any product's images and videos as a gallery, anywhere on the page.
-- **Media Badge** `media-badge` — (summary pending)
-- **Media Banner** `media-banner` — (summary pending)
+- **Media Badge** `media-badge` — Pin a short label with an optional icon on an image or video, such as 3 Free Gifts.
+- **Media Banner** `media-banner` — Run a text strip across the top or bottom of an image or video, such as a free shipping offer.
 - **Media Benefits Grid** `media-benefits-grid` — Split a product gallery slide into the image and a column of benefit cards beside it.
-- **Media Card** `media-card` — (summary pending)
-- **Media Effect** `media-effect` — (summary pending)
-- **Media Gallery Content** `media-gallery-content` — (summary pending)
-- **Media Image** `media-image` — (summary pending)
-- **Media Play Button** `media-play-button` — (summary pending)
-- **Media Stamp** `media-stamp` — (summary pending)
-- **Product Description** `product-description` — (summary pending)
+- **Media Card** `media-card` — Place a small card with a heading, text and an optional image over media, such as a gift offer.
+- **Media Effect** `media-effect` — Float an image gently up and down, with optional sway, pulse or tilt, to bring a product cutout to life.
+- **Media Gallery Content** `media-gallery-content` — Show the blocks under the product gallery at this spot in the buy box on mobile, without duplicating them.
+- **Media Image** `media-image` — Layer a second image over an image or video, such as an award seal or a hand-drawn arrow.
+- **Media Play Button** `media-play-button` — Show a play button over an image, optionally opening a video or other content in a popup.
+- **Media Stamp** `media-stamp` — Stamp up to three lines of text in a circle, seal, starburst or shield on an image, such as 25% OFF.
+- **Product Description** `product-description` — Show the product's description, folding long copy behind a Read more button at a set height.
 - **Product Price** `product-price` — Show a product's price beside the compare-at price it is discounted from, with an optional sale badge.
 - **Product Subtotals** `product-subtotals` — Show what the shopper is saving and what the cart will come to, updating live as they choose.
-- **Product Title** `product-title` — (summary pending)
+- **Product Title** `product-title` — Show the product's name as the page heading, with its own size, font and an optional gradient.
 - **Shop Pay Installments** `shop-pay-installments` — Show Shopify's Shop Pay installments message for a product or the cart total.
-- **Size Chart** `size-chart` — (summary pending)
+- **Size Chart** `size-chart` — Lay out measurements by size in a table, with an optional toggle between inches and centimeters.
 - **Supplement Facts** `supplement-facts` — Show a supplement or nutrition facts label typed as plain rows, with indents, thick bars, and daily value notes.
 
 ### Product Options
@@ -372,16 +372,16 @@ Contents: 206 blocks, 45 sections.
 
 ### Sliders & Grids
 
-- **Bento Grid** `bento-grid` — (summary pending)
-- **Bento Item** `bento-item` — (summary pending)
-- **Grid** `grid` — (summary pending)
-- **Grid + Mobile Slider** `grid-mobile-slider` — (summary pending)
-- **Grid Item** `grid-item` — (summary pending)
-- **Slide** `slide` — (summary pending)
-- **Slide Image BG** `slide-image-bg` — (summary pending)
-- **Slider** `slider` — (summary pending)
-- **Slider Arrows** `slider-arrows` — (summary pending)
-- **Slider Thumbnails** `slider-thumbnails` — (summary pending)
+- **Bento Grid** `bento-grid` — Arrange image cards of mixed widths into a mosaic, with text below or over each image.
+- **Bento Item** `bento-item` — Add one image card to a bento grid at its own width, with an optional badge and link.
+- **Grid** `grid` — Arrange content in equal-width columns that wrap into rows, as separate cards or one joined panel.
+- **Grid + Mobile Slider** `grid-mobile-slider` — Show items in a desktop grid that turns into a swipeable slider on mobile instead of a long stack.
+- **Grid Item** `grid-item` — Hold the blocks for one cell of a grid, which sets the padding and colors for every cell.
+- **Slide** `slide` — Hold the blocks for one slide of a slider, which sets the padding and colors for every slide.
+- **Slide Image BG** `slide-image-bg` — Layer a background image behind one slide's content, with an optional overlay to keep text readable.
+- **Slider** `slider` — Show content in a swipeable carousel, one or several slides at a time, with optional autoplay.
+- **Slider Arrows** `slider-arrows` — Page through the nearest slider with arrows placed anywhere in the section, such as beside its heading.
+- **Slider Thumbnails** `slider-thumbnails` — Let shoppers jump between slides of the nearest slider by tapping image or icon thumbnails.
 
 ### Social Proof
 
