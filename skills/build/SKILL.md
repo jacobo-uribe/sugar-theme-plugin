@@ -1,6 +1,6 @@
 ---
 name: build
-description: Create sections and blocks in the user's theme from a goal or idea, using existing Sugar theme files or completely new ones. Use when the user has a goal or an idea for a component, feature or section but gives no reference to clone. If they do share references, they are for direction and inspiration, not for cloning.
+description: Create sections and blocks in the user's theme from a goal or idea, using existing Sugar theme files or completely new ones. Use when the user has a goal or an idea for a component, feature or section but gives no reference to clone. If they do share references, they are for direction and inspiration, not for cloning. Not for improving something already on the page; that is enhance. Not for matching a reference exactly; that is clone.
 disable-model-invocation: false
 ---
 

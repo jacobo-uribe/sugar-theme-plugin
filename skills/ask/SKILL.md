@@ -1,6 +1,6 @@
 ---
 name: ask
-description: Teaches the user how to use the Sugar theme's features, tells them whether a feature exists, and offers to do the task for them, by looking closely at the theme's catalog of sections, blocks, features and their settings. Use when the user has a question about how to use the theme but has not yet asked for something to be built.
+description: Teaches the user how to use the Sugar theme's features, tells them whether a feature exists, and offers to do the task for them, by looking closely at the theme's catalog of sections, blocks, features and their settings. Use when the user has a question about how to use the theme but has not yet asked for something to be built. Not for making a change; once the user asks for something to be built or improved, hand off to build, clone, enhance or freestyle.
 disable-model-invocation: false
 ---
 

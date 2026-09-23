@@ -1,6 +1,6 @@
 ---
 name: enhance
-description: Improve the design and/or functionality of a specific component, section or entire page. Use when the user already has a block, section or page on their theme and wants it improved rather than replaced or rebuilt.
+description: Improve the design and/or functionality of a specific component, section or entire page. Use when the user already has a block, section or page on their theme and wants it improved rather than replaced or rebuilt. Not for creating something the page doesn't have yet; that is build.
 disable-model-invocation: false
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: freestyle
-description: Create custom sections and blocks in the user's theme as completely new files, without composing them from the theme's existing sections and blocks. Use when the user asks for something in "freestyle" mode or specifically without existing theme components. They may give a goal or references as direction. This is the build skill's sibling, invoked only for creations that do not use existing components.
+description: Create custom sections and blocks in the user's theme as completely new files, without composing them from the theme's existing sections and blocks. Use when the user asks for something in "freestyle" mode or specifically without existing theme components. They may give a goal or references as direction. This is the build skill's sibling, invoked only for creations that do not use existing components. Not for tasks the theme's existing components can do; that is build.
 disable-model-invocation: false
 ---
 
