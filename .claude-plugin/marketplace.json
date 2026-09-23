@@ -1,0 +1,11 @@
+{
+  "name": "sugar",
+  "owner": { "name": "Sugar Theme", "url": "https://sugarthe.me" },
+  "plugins": [
+    {
+      "name": "sugar-theme",
+      "source": "./",
+      "description": "Edit a Shopify store built on the Sugar theme with AI agents."
+    }
+  ]
+}
