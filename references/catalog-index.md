@@ -1,6 +1,6 @@
 # Sugar theme catalog index
 
-Sugar 2.0.0-dev · catalog `537220cbb3d6` · generated, do not edit.
+Sugar 2.0.0-dev · catalog `ec8d5115fdd1` · generated, do not edit.
 
 One line per section and block, grouped the way the theme editor's add menu groups them. This answers whether something exists and roughly what it does. For how a component works, its settings and its known issues, fetch its docs from the Sugar theme MCP by slug (`get_component`). The MCP's `list_catalog` is the live version of this list.
 
@@ -256,14 +256,14 @@ Contents: 206 blocks, 45 sections.
 
 - **A/B Test** `ab-test` — Split visitors between two versions of your content and measure which one sells better.
 - **Container** `container` — Group blocks into a container with its own padding, colors, and border.
-- **Custom Liquid** `custom-liquid` — (summary pending)
+- **Custom Liquid** `custom-liquid` — Add an app snippet or custom Liquid code wherever a block can go, for anything the theme doesn't cover.
 - **Cutout Card** `cutout-card` — Anchor a cutout image to the edge of a card and set a heading, endorsement or offer beside it.
 - **Divider** `divider` — Separate stacked content with a horizontal line, optionally broken by an icon or a short label.
-- **Double Column** `double-column` — (summary pending)
-- **Numbered Stages** `numbered-stages` — (summary pending)
+- **Double Column** `double-column` — Divide a card into two columns at a set ratio, each with optional colors, stacked or side by side on mobile.
+- **Numbered Stages** `numbered-stages` — List steps beside numbered circles, each with a small label, a heading and text, such as how a product works.
 - **Row** `row` — Lay blocks out side by side, with control over how they align, distribute, and share the width.
-- **Section Content** `section-content` — (summary pending)
-- **Stage Item** `numbered-stage-item` — (summary pending)
+- **Section Content** `section-content` — Hold the heading, text and buttons of a hero or Media with Text section, placed where the section puts its content.
+- **Stage Item** `numbered-stage-item` — Add one numbered step to Numbered Stages, with a small label, a heading and optional body text.
 - **Variant** `ab-variant` — Hold the content for one side of an A/B test, either the current version or the challenger.
 
 ### Marquee
