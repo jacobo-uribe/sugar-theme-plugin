@@ -1,6 +1,6 @@
 # Sugar theme catalog index
 
-Sugar 2.0.0-dev · catalog `bdccf5015bea` · generated, do not edit.
+Sugar 2.0.0-dev · catalog `0e3a727ad067` · generated, do not edit.
 
 One line per section and block, grouped the way the theme editor's add menu groups them. This answers whether something exists and roughly what it does. For how a component works, its settings and its known issues, fetch its docs from the Sugar theme MCP by slug (`get_component`). The MCP's `list_catalog` is the live version of this list.
 
@@ -356,13 +356,13 @@ Contents: 206 blocks, 45 sections.
 
 ### Reviews
 
-- **Amazon Review** `amazon-review` — (summary pending)
+- **Amazon Review** `amazon-review` — Show one review in the style of an Amazon listing, with stars, a verified purchase tag and optional photos.
 - **Avatar** `avatar` — Credit a quote or a review to a person with their photo, name, and an optional verified badge.
-- **Avatar Orbit Circles** `avatar-orbit-circles` — (summary pending)
-- **Facebook Comment** `facebook-comment` — (summary pending)
-- **Facebook Comments** `facebook-comments` — (summary pending)
-- **Review Avatars** `review-avatars` — (summary pending)
-- **Review Stars** `review-stars` — (summary pending)
+- **Avatar Orbit Circles** `avatar-orbit-circles` — Surround a large center photo with up to eight smaller avatars on dashed orbits, with optional rotation.
+- **Facebook Comment** `facebook-comment` — Add one comment to a Facebook Comments thread, with reactions, plus optional media and up to three replies.
+- **Facebook Comments** `facebook-comments` — Recreate a Facebook comment thread, with reactions, expandable replies and a comment box, for advertorial-style social proof.
+- **Review Avatars** `review-avatars` — Show a star rating and a line such as Rated 4.9/5 beside a row of overlapping customer photos.
+- **Review Stars** `review-stars` — Show a star rating with a line such as 1,200 reviews, optionally scrolling to the reviews when tapped.
 - **Testimonial Grid** `testimonial-grid` — Display customer reviews as a grid of cards, with optional sorting, filtering, and masonry packing.
 - **Testimonial Slider** `testimonial-slider` — Move customer reviews through a carousel, one or several cards at a time.
 
