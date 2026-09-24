@@ -1,6 +1,6 @@
 # Sugar theme catalog index
 
-Sugar 2.0.0-dev · catalog `0e3a727ad067` · generated, do not edit.
+Sugar 2.0.0-dev · catalog `bb24500b05ed` · generated, do not edit.
 
 One line per section and block, grouped the way the theme editor's add menu groups them. This answers whether something exists and roughly what it does. For how a component works, its settings and its known issues, fetch its docs from the Sugar theme MCP by slug (`get_component`). The MCP's `list_catalog` is the live version of this list.
 
@@ -212,12 +212,12 @@ Contents: 206 blocks, 45 sections.
 
 ### Header
 
-- **Button** `drawer-button` — (summary pending)
-- **Image** `drawer-image` — (summary pending)
-- **Link** `desktop-link` — (summary pending)
-- **Link** `drawer-link` — (summary pending)
-- **Menu** `desktop-menu` — (summary pending)
-- **Menu** `drawer-menu` — (summary pending)
+- **Button** `drawer-button` — Add a button to the header drawer, such as Shop now, in a theme button style or as a text link.
+- **Image** `drawer-image` — Add a linked image to the header drawer, with an optional caption, such as a featured collection or promo.
+- **Link** `desktop-link` — Add one link to a hand-built desktop menu, used instead of a Shopify navigation menu.
+- **Link** `drawer-link` — Add one link to a hand-built drawer menu, with an optional icon, such as Track your order.
+- **Menu** `desktop-menu` — Show a Shopify navigation menu with dropdowns across the desktop header, or build one from Link blocks.
+- **Menu** `drawer-menu` — Show a Shopify navigation menu as accordions in the header drawer, or build one from Link blocks with icons.
 
 ### Headings
 
