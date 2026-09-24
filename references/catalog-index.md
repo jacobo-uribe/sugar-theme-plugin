@@ -1,6 +1,6 @@
 # Sugar theme catalog index
 
-Sugar 2.0.0-dev · catalog `301f23df2793` · generated, do not edit.
+Sugar 2.0.0-dev · catalog `bdccf5015bea` · generated, do not edit.
 
 One line per section and block, grouped the way the theme editor's add menu groups them. This answers whether something exists and roughly what it does. For how a component works, its settings and its known issues, fetch its docs from the Sugar theme MCP by slug (`get_component`). The MCP's `list_catalog` is the live version of this list.
 
@@ -276,18 +276,18 @@ Contents: 206 blocks, 45 sections.
 
 ### Media
 
-- **Before & After** `before-after` — (summary pending)
+- **Before & After** `before-after` — Compare a before and after image with a divider shoppers drag, or reveal it on hover, scroll or tap.
 - **Content Card** `content-card` — Give a section's content column its own surface, and decide how far it overlaps the media.
-- **Custom Video Controls** `video-controls` — (summary pending)
+- **Custom Video Controls** `video-controls` — Give a video a play button plus optional replay, sound, fullscreen and timeline controls, each placed and styled separately.
 - **Gallery** `gallery` — Build a carousel from hand-picked images and videos, with no product behind it.
-- **Logo** `logo` — (summary pending)
-- **Media** `media` — (summary pending)
+- **Logo** `logo` — Show the store's primary or secondary logo, or an uploaded one, anywhere on a page, with an optional link.
+- **Media** `media` — Show an image or video in a frame of your choice, with optional overlays such as a badge or caption.
 - **Media & Text Row** `media-text-row` — Add one row of media and blocks to an alternating media section.
-- **Media Text Overlay** `media-text-overlay` — (summary pending)
-- **Simple Video Controls** `video-controls-simple` — (summary pending)
-- **Social Media Videos** `social-media-videos` — (summary pending)
+- **Media Text Overlay** `media-text-overlay` — Caption an image or video with a heading and supporting line over a fade that keeps them readable.
+- **Simple Video Controls** `video-controls-simple` — Give a video a play button plus optional replay, sound, fullscreen and timeline controls in one shared style.
+- **Social Media Videos** `social-media-videos` — Show short vertical videos, such as customer clips, in a swipeable row that opens each one in a popup.
 - **Variable Media** `variable-media` — Sync a column of triggers to a media panel that swaps as each one becomes active, on a timer, on click, or as the page scrolls.
-- **Video Item** `social-media-video-item` — (summary pending)
+- **Video Item** `social-media-video-item` — Add one video to a Social Media Videos row, with an optional thumbnail for when autoplay is off.
 
 ### Navigation
 
@@ -308,7 +308,7 @@ Contents: 206 blocks, 45 sections.
 ### Product Details
 
 - **Benefit Card** `benefit-card` — Place one benefit inside a Media Benefits Grid, with an icon, a label, and an optional description.
-- **Custom Buy Box** `featured-product-info` — (summary pending)
+- **Custom Buy Box** `featured-product-info` — Build a buy box for any product anywhere on the page from product blocks such as title, price and buy button, plus any other content.
 - **Custom Product Media** `custom-product-media` — Show any product's images and videos as a gallery, anywhere on the page.
 - **Media Badge** `media-badge` — Pin a short label with an optional icon on an image or video, such as 3 Free Gifts.
 - **Media Banner** `media-banner` — Run a text strip across the top or bottom of an image or video, such as a free shipping offer.
