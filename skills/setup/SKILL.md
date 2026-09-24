@@ -19,6 +19,13 @@ Check the following, install what is missing and update what is out of date:
 - **Shopify CLI**
 - **Playwright, Chrome and Safari engines.** Both run headless by default so no window opens and nothing steals focus while the agent checks its own work. Explain to the user what headless means and offer the visible version after installation if they want to watch the agent work.
 
+**Installing from nothing.** On a machine with none of these, install Homebrew from brew.sh, then:
+
+```bash
+brew install node
+npm install -g @shopify/cli
+```
+
 Install the two browsers as MCP servers so every session and subagent can use them:
 
 ```bash
@@ -27,13 +34,15 @@ claude mcp add -s user playwright-safari -- npx @playwright/mcp@latest --headles
 npx @playwright/mcp@latest install-browser webkit
 ```
 
-The first entry drives the Chrome already on the computer and downloads nothing. The second is WebKit, Safari's engine, about 78 MB. If either name already exists without `--headless`, remove it (`claude mcp remove -s user <name>`) and add it again, or a window will open in every session. New MCP entries only load in a new session, so tell the user to restart before the smoke test.
+The first entry drives the Google Chrome already on the computer and downloads nothing. If Chrome isn't installed, register it with `--browser chromium` instead and run `npx @playwright/mcp@latest install-browser chromium` to fetch a copy. The second is WebKit, Safari's engine, about 78 MB. If either name already exists without `--headless`, remove it (`claude mcp remove -s user <name>`) and add it again, or a window will open in every session. New MCP entries only load in a new session, so tell the user to restart before the smoke test.
 
 **Smoke test.** Open a page of the user's store in each browser and take a screenshot. Open the cart drawer and confirm it moves across several frames. Confirm the app in front of the user did not change. On a password-protected store each browser keeps its own login, so the user enters the storefront password once per browser here and never again.
 
 After installation, tell the user what each tool does, specifically how it helps them edit their Sugar theme.
 
 # Step 2: Connect to the Sugar theme MCP
+
+If the plugin has no MCP configured yet, say so, skip this step, and carry on; the catalog index in the plugin and the docs at sugarthe.me cover the build skills, and only update checks and issue reports need the server.
 
 The plugin bundles the Sugar theme MCP. Connecting runs a browser sign-in with the user's Sugar license, which identifies them for everything that follows: component docs, known issues and learnings, update checks and issue reports. Nothing about the user's license or store needs to be typed into a file.
 
