@@ -1,6 +1,6 @@
 # Sugar theme catalog index
 
-Sugar 2.0.0-dev · catalog `ec8d5115fdd1` · generated, do not edit.
+Sugar 2.0.0-dev · catalog `25a2f3a9e4de` · generated, do not edit.
 
 One line per section and block, grouped the way the theme editor's add menu groups them. This answers whether something exists and roughly what it does. For how a component works, its settings and its known issues, fetch its docs from the Sugar theme MCP by slug (`get_component`). The MCP's `list_catalog` is the live version of this list.
 
@@ -226,13 +226,13 @@ Contents: 206 blocks, 45 sections.
 
 ### Icons
 
-- **Icon** `icon` — (summary pending)
-- **Icon + Heading + Text** `icon-text` — (summary pending)
-- **Icon + Heading List** `icon-heading-list` — (summary pending)
+- **Icon** `icon` — Show a single icon or emoji at its own size, such as a check mark in a table cell or a row.
+- **Icon + Heading + Text** `icon-text` — Pair an icon with a heading and optional supporting text, placing the icon above or beside them.
+- **Icon + Heading List** `icon-heading-list` — List points with a heading and supporting line each, beside a shared icon or a number that counts up.
 - **Icon + Text List** `icon-text-list` — List short points with an icon beside each one, stacked or in columns.
 - **Icon Stamp** `icon-stamp` — Print a circular seal with an icon at its centre and text curved around the rim, such as a guarantee or an award.
 - **Icon Stamp List** `icon-stamp-list` — Lay out a row of circular seals that share one size, color, and text style, such as a set of trust marks.
-- **List Item** `icon-heading-list-item` — (summary pending)
+- **List Item** `icon-heading-list-item` — Add one point to an icon + heading list, with a heading, a supporting line and its own icon if needed.
 - **Payment Badges** `payment-badges` — Show the card and wallet logos you accept, such as Visa, Apple Pay, or Klarna.
 - **Social Icons** `social-icons` — Show a row of social profile links as icons, from the theme's own settings or from a hand-picked list.
 - **Stamp** `icon-stamp-list-item` — Add one seal to an icon stamp list, with its own icon and two curved lines of text.
