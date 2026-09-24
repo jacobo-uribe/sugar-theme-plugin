@@ -1,6 +1,6 @@
 # Sugar theme catalog index
 
-Sugar 2.0.0-dev · catalog `25a2f3a9e4de` · generated, do not edit.
+Sugar 2.0.0-dev · catalog `d4d1080a578f` · generated, do not edit.
 
 One line per section and block, grouped the way the theme editor's add menu groups them. This answers whether something exists and roughly what it does. For how a component works, its settings and its known issues, fetch its docs from the Sugar theme MCP by slug (`get_component`). The MCP's `list_catalog` is the live version of this list.
 
@@ -10,16 +10,16 @@ Contents: 206 blocks, 45 sections.
 
 ### Advanced
 
-- **Apps** `apps` — (summary pending)
-- **Custom Liquid** `custom-liquid` — (summary pending)
+- **Apps** `apps` — Add app blocks from installed apps in a section of their own, with the theme's spacing around them.
+- **Custom Liquid** `custom-liquid` — Add a section of custom Liquid, HTML, CSS or JavaScript, with its own padding, for anything the theme doesn't cover.
 
 ### Advertorial
 
-- **Advertorial** `advertorial` — (summary pending)
+- **Advertorial** `advertorial` — Lay out a long-form sales article beside a sidebar that stays in view, such as one holding the buy box.
 
 ### Animations
 
-- **Marquee** `marquee` — (summary pending)
+- **Marquee** `marquee` — Run scrolling tracks of claims, logos or reviews across a full-width band, with an optional heading above them.
 
 ### Announcement
 
@@ -28,7 +28,7 @@ Contents: 206 blocks, 45 sections.
 ### Blog
 
 - **Blog List** `blog-list` — Show blog posts as a grid or slider of cards, with optional tag badges, reading time, and per-post overrides.
-- **Blog Navigation** `blog-navigation` — (summary pending)
+- **Blog Navigation** `blog-navigation` — Show a blog's tags, or links you pick, as a row of pills readers tap to filter posts, optionally pinned as they scroll.
 - **Blog Post** `blog-post` — Lay out a blog post with an optional sidebar for a table of contents, authors, and a newsletter box.
 
 ### Cart
@@ -43,8 +43,8 @@ Contents: 206 blocks, 45 sections.
 
 ### Decoration
 
-- **Page Background End** `page-background-end` — (summary pending)
-- **Section Divider** `section-divider` — (summary pending)
+- **Page Background End** `page-background-end` — Stop a Page Background at this point, so the sections below return to their normal width and edges.
+- **Section Divider** `section-divider` — Shape the seam between two sections with a wave, angle or curve, optionally animated.
 
 ### Footer
 
@@ -76,12 +76,12 @@ Contents: 206 blocks, 45 sections.
 ### Media
 
 - **Alternating Media + Text** `alternating-media-with-text` — Stack rows of media and text that flip sides down the page, with optional dividers between them.
-- **Media Banner** `media-banner` — (summary pending)
+- **Media Banner** `media-banner` — Show a full-width image or video banner, with its own media for mobile and an optional link.
 - **Media with Text** `media-with-text` — Pair one image or video with a column of blocks, with an optional card that overlaps the media.
 
 ### Product
 
-- **Featured Product** `featured-product` — (summary pending)
+- **Featured Product** `featured-product` — Show any product's gallery and buy box on a page other than its own, such as a hero offer on the homepage.
 
 ### Quiz
 
@@ -115,17 +115,17 @@ Contents: 206 blocks, 45 sections.
 
 - **Hide Header & Footer** `hide-header-footer` — Strip the site chrome off one page, for a landing page or a checkout-style flow.
 - **Page A/B Test** `page-ab-test` — Split visitors between two templates of the same page, at the same URL, and measure which layout sells better.
-- **Page Redirect** `page-redirect` — (summary pending)
-- **Page Styles** `page-styles` — (summary pending)
+- **Page Redirect** `page-redirect` — Send visitors on to another page after an optional delay, such as from a retired landing page.
+- **Page Styles** `page-styles` — Override the colors, buttons and fonts of one page without changing the rest of the store.
 - **Section A/B Test** `section-ab-test` — Split visitors between two sets of sections on a page, or test a section against not having it, and measure which sells better.
 
 ## Blocks
 
 ### Advertorial
 
-- **Content** `advertorial-content` — (summary pending)
-- **Reviews Summary** `advertorial-reviews` — (summary pending)
-- **Sidebar** `advertorial-sidebar` — (summary pending)
+- **Content** `advertorial-content` — Hold the article in an advertorial's main column, from headings and images to reviews and buy buttons.
+- **Reviews Summary** `advertorial-reviews` — Show a typed-in average rating and star breakdown, with optional ratings by feature, in an advertorial's article or sidebar.
+- **Sidebar** `advertorial-sidebar` — Hold an advertorial's sidebar, which stays in view as the article scrolls, such as a product card with a buy button.
 
 ### Animations
 
@@ -139,11 +139,11 @@ Contents: 206 blocks, 45 sections.
 
 ### Badges
 
-- **Activated Badge** `activated-badge` — (summary pending)
-- **Badge** `badge-list-item` — (summary pending)
+- **Activated Badge** `activated-badge` — Label a timeline milestone with a pill that shifts from its inactive to its active colors as the milestone lights up.
+- **Badge** `badge-list-item` — Add one badge to a badge list, with its own text and optional icon, styled by the list.
 - **Badge** `badge` — Highlight a short claim in a compact pill with an optional icon, such as Free Shipping or Bestseller.
 - **Badge List** `badge-list` — Show a row of badges that share one style, such as trust claims under a buy button.
-- **Chip Badge** `chip-badge` — (summary pending)
+- **Chip Badge** `chip-badge` — Flag a status in a small pill with a leading dot, in a solid or glass style, such as Back in stock.
 - **Text Stamp** `text-stamp-list-item` — Add one stamp to a text stamp list, with up to three lines of its own text.
 - **Text Stamp** `text-stamp` — Stack up to three lines of text inside a circle, seal, starburst, or shield, such as a guarantee or a discount.
 - **Text Stamp List** `text-stamp-list` — Lay out a row of text stamps that share one shape, size, and text style, such as a set of trust marks.
@@ -155,7 +155,7 @@ Contents: 206 blocks, 45 sections.
 ### Buttons
 
 - **Buy Button** `product-buy-button` — Add the product to the cart with custom text, live prices, and optional hover animations.
-- **Link Button** `link-button` — (summary pending)
+- **Link Button** `link-button` — Link to a page or scroll to a section from a button, with an optional second line, icons and hover effects.
 - **Mini Link Buttons** `mini-link-buttons` — Jump between sections of a long page with a row of small pill buttons.
 - **Text Buy Button** `text-buy-button` — Add the product to the cart from a plain text link, with live prices and text hover effects.
 - **Text Link Button** `text-link-button` — Link to a page or scroll to a section from a line of text, with text hover effects.
@@ -291,15 +291,15 @@ Contents: 206 blocks, 45 sections.
 
 ### Navigation
 
-- **Advertorial Breadcrumbs** `advertorial-breadcrumbs` — (summary pending)
-- **Breadcrumbs** `breadcrumbs` — (summary pending)
+- **Advertorial Breadcrumbs** `advertorial-breadcrumbs` — Show a hand-written breadcrumb trail, such as Home › Health › Article Title, to make a sales page read like an article.
+- **Breadcrumbs** `breadcrumbs` — Show the product's place in the store, such as Home › Collection › Product, and describe it to search engines.
 
 ### Popup
 
-- **Opt-In Page** `email-popup-opt-in` — (summary pending)
-- **Pre-Opt-In Page** `email-popup-pre-opt-in` — (summary pending)
-- **Scratch Off** `scratch-off` — (summary pending)
-- **Success Page** `email-popup-success` — (summary pending)
+- **Opt-In Page** `email-popup-opt-in` — Hold an email popup's sign-up form and set when the popup opens, such as after a delay or on exit intent.
+- **Pre-Opt-In Page** `email-popup-pre-opt-in` — Add an optional first step to an email popup, such as a question or a scratch-off, before the sign-up form.
+- **Scratch Off** `scratch-off` — Hide a reward under foil shoppers scratch away on the email popup's first step, such as a mystery discount.
+- **Success Page** `email-popup-success` — Thank shoppers once they sign up to an email popup, with an optional coupon, confetti, auto-close or redirect.
 
 ### Product
 
@@ -333,7 +333,7 @@ Contents: 206 blocks, 45 sections.
 - **Offer Cards** `offer-cards` — Sell a product in quantity tiers set side by side as cards, each with its own discount, badges, perks and gifts.
 - **Offer List** `offer-list` — Sell a product in quantity tiers stacked as rows, each with its own discount, badges, perks and gifts.
 - **Product Upsells** `product-upsells` — Offer add-on products beside the buy button that a shopper selects and adds with the main product in one click.
-- **Quantity Selector** `product-quantity-selector` — (summary pending)
+- **Quantity Selector** `product-quantity-selector` — Let shoppers pick a quantity with plus and minus buttons or a dropdown before adding to cart.
 - **Silent Subscription** `silent-subscription` — Put a subscription plan on the product form with nothing for the shopper to pick.
 - **Subscription Toggle** `subscription-toggle` — Turn a product's subscription on with one card and a checkbox, the plan's price always in view.
 - **Subscriptions** `subscriptions` — Sell a product on a subscription plan or as a one-time purchase, with two cards that reprice the page as the shopper picks.
@@ -368,7 +368,7 @@ Contents: 206 blocks, 45 sections.
 
 ### Row
 
-- **Row Image** `row-image` — (summary pending)
+- **Row Image** `row-image` — Place an image in a row beside other blocks, at its own width on desktop and mobile.
 
 ### Sliders & Grids
 
@@ -396,13 +396,13 @@ Contents: 206 blocks, 45 sections.
 
 ### Support
 
-- **FAQ Category** `faq-category` — (summary pending)
-- **FAQ Item** `faq-item` — (summary pending)
+- **FAQ Category** `faq-category` — Group questions under one tab of the FAQ section, with an optional icon beside the tab name.
+- **FAQ Item** `faq-item` — Add one question and its answer to an FAQ category, shown as a row that expands when tapped.
 
 ### Tabs & Accordions
 
-- **Collapsible Heading Badge** `collapsible-row-heading-badge` — (summary pending)
-- **Collapsible Heading Icon** `collapsible-row-heading-icon` — (summary pending)
+- **Collapsible Heading Badge** `collapsible-row-heading-badge` — Add a small label such as NEW to a collapsible row's heading, beside the text or the expand icon.
+- **Collapsible Heading Icon** `collapsible-row-heading-icon` — Add an icon before a collapsible row's heading, such as a check mark or a shipping truck.
 - **Collapsible Row** `collapsible-row` — Hide a block of content behind a heading that expands when clicked, such as shipping details or a returns policy.
 - **Collapsible Row Item** `collapsible-row-item` — Add one row to a collapsible row list, carrying its own heading and content.
 - **Collapsible Row List** `collapsible-row-list` — Stack several collapsible rows that share one set of styles, such as a shipping and returns FAQ.
@@ -421,21 +421,21 @@ Contents: 206 blocks, 45 sections.
 
 ### Text
 
-- **Credits** `footer-credits` — (summary pending)
-- **Disclaimer** `footer-disclaimer` — (summary pending)
+- **Credits** `footer-credits` — Show the footer's copyright line with the store name, policy links and the payment methods the store accepts.
+- **Disclaimer** `footer-disclaimer` — Add fine print, such as an FDA supplement disclaimer, to the footer, a product page or a collapsible row.
 - **Link Menu** `link-menu` — Show a list of links under an optional heading, from a Shopify menu or built by hand.
 - **Text** `text` — Add paragraphs of rich text with sizes per device and inline accents.
-- **Text Banner** `text-banner` — (summary pending)
+- **Text Banner** `text-banner` — Set a line of text on its own colored strip, such as a shipping note, optionally flush to a card's top or bottom.
 
 ### Text Accents
 
-- **Inline Countdown** `inline-countdown` — (summary pending)
-- **Inline Icon** `inline-icon` — (summary pending)
+- **Inline Countdown** `inline-countdown` — Show a live countdown inside a heading or text, wherever [countdown] is typed.
+- **Inline Icon** `inline-icon` — Place an icon inside a heading or text, wherever its [icon_1] to [icon_4] placeholder is typed.
 
 ### Urgency
 
-- **Countdown Timer** `countdown-timer` — (summary pending)
-- **Inventory Pulse** `inventory-pulse` — (summary pending)
+- **Countdown Timer** `countdown-timer` — Count down to a date, to midnight each day or from a set time, to add urgency to an offer.
+- **Inventory Pulse** `inventory-pulse` — Show a stock status beside a pulsing dot, optionally switching to a low-stock message from real inventory.
 
 ### Utility
 
