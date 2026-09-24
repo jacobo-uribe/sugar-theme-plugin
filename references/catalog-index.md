@@ -1,6 +1,6 @@
 # Sugar theme catalog index
 
-Sugar 2.0.0-dev · catalog `bb24500b05ed` · generated, do not edit.
+Sugar 2.0.0-dev · catalog `60a4a174088c` · generated, do not edit.
 
 One line per section and block, grouped the way the theme editor's add menu groups them. This answers whether something exists and roughly what it does. For how a component works, its settings and its known issues, fetch its docs from the Sugar theme MCP by slug (`get_component`). The MCP's `list_catalog` is the live version of this list.
 
@@ -194,12 +194,12 @@ Contents: 206 blocks, 45 sections.
 
 ### Forms
 
-- **Coupon** `coupon` — (summary pending)
+- **Coupon** `coupon` — Show a discount code shoppers copy with one tap, applying it to their cart at the same time.
 - **Discount Code Input** `cart-discount-input` — Let shoppers type a discount code in the cart and see it applied before checkout.
-- **Dismiss Button** `dismiss-button` — (summary pending)
-- **Email Input** `email-input` — (summary pending)
-- **Multiple Choice** `multiple-choice` — (summary pending)
-- **Opt-In Button** `opt-in-button` — (summary pending)
+- **Dismiss Button** `dismiss-button` — Give the email popup's success page a button that closes the popup or sends the shopper to another page.
+- **Email Input** `email-input` — Collect a shopper's email address in a popup, with an optional inline submit arrow and customer tags for segmenting.
+- **Multiple Choice** `multiple-choice` — Ask shoppers a question in the email popup and tag them by their answer, as radios, pills, icons or a dropdown.
+- **Opt-In Button** `opt-in-button` — Submit the email popup's sign-up form with a button in a theme button style, with optional icons.
 - **Popup Button** `popup-button` — Move a shopper through an email popup with a button that either carries on or closes it.
 
 ### Gifts
