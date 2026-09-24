@@ -1,6 +1,6 @@
 # Sugar theme catalog index
 
-Sugar 2.0.0-dev · catalog `60a4a174088c` · generated, do not edit.
+Sugar 2.0.0-dev · catalog `537220cbb3d6` · generated, do not edit.
 
 One line per section and block, grouped the way the theme editor's add menu groups them. This answers whether something exists and roughly what it does. For how a component works, its settings and its known issues, fetch its docs from the Sugar theme MCP by slug (`get_component`). The MCP's `list_catalog` is the live version of this list.
 
@@ -239,14 +239,14 @@ Contents: 206 blocks, 45 sections.
 
 ### Interactive
 
-- **FAQ Pill** `faq-pill` — (summary pending)
-- **FAQ Pills** `faq-pills` — (summary pending)
-- **Milestone** `milestone` — (summary pending)
+- **FAQ Pill** `faq-pill` — Add one question to FAQ Pills, with the answer it opens and an icon on its pill.
+- **FAQ Pills** `faq-pills` — Turn common questions into tappable pills that open their answer below or as a tooltip, such as sizing or shipping.
+- **Milestone** `milestone` — Add one step to a timeline, with any content blocks and an optional image across the line when it's centered.
 - **Popup** `popup` — Open a window over the page from a text link, a button or an image, such as a size guide, an ingredient list or fine print.
 - **Reveal Card** `reveal-card` — Hold one card's face and the blocks revealed when a shopper opens it.
 - **Reveal Cards** `reveal-cards` — Arrange cards in a grid that expand on click to show any blocks nested inside, such as benefits or feature details.
-- **Reveal Content** `milestone-reveal` — (summary pending)
-- **Timeline** `timeline` — (summary pending)
+- **Reveal Content** `milestone-reveal` — Hold content in a milestone that appears only once the timeline reaches it, such as a detail or a button.
+- **Timeline** `timeline` — Walk shoppers through steps or a story as milestones that light up as they scroll, vertically or as a slider.
 
 ### Layout
 
