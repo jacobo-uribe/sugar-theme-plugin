@@ -21,10 +21,10 @@ Nothing here needs an administrator password, so you do all of it. Check what ex
 - **Node.js**, installed for the user only, so no password is ever asked. If `node` is missing or older than the current LTS:
 
   ```bash
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | METHOD=script bash
   ```
 
-  then, in a fresh shell, `nvm install --lts`. Do not use Homebrew for this: its installer asks for the user's password in a terminal, which you cannot type and they should not have to.
+  then, in a fresh shell, `nvm install --lts`. `METHOD=script` matters: without it the installer uses `git`, and on a Mac with no developer tools the `git` command is a stub that opens Apple's "install command line developer tools" dialog. For the same reason, never run `git` during setup. Do not use Homebrew either: its installer asks for the user's password in a terminal, which you cannot type and they should not have to.
 - **Shopify CLI**: `npm install -g @shopify/cli@latest`. Run it again to update. npm prints a warning that it blocked an install script belonging to `esbuild`; that is expected and harmless, say so if the user sees it.
 - **sharp**, the image library behind the plugin's `scripts/zoom.js`, which crops and enlarges screenshots and puts a reference and a clone side by side: `npm install -g sharp`. No compiler, no Python.
 - **Two headless browsers.** The plugin registers both as MCP servers itself (Chrome and Safari's engine), so there is nothing to add or configure. Fetch the engines once:
