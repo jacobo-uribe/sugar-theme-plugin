@@ -52,7 +52,7 @@ Stamp each written file with its new release. Record the applied change ids in t
 
 Push only the files you changed to the working theme, following the working-theme policy. Then delete the scratch folder.
 
-**One exception.** If the working theme is the live theme under an *edit directly* policy and the chosen changes include `protected` or `security` ones, which replace whole files, duplicate the live theme first and push there instead. Tell the user why: that is the one update they should look at before customers see it. Record the duplicate's ID in AGENTS.md as the working theme for the review.
+**One exception.** If the working theme is the live theme (AGENTS.md says `Live edits: yes`) and the chosen changes include `protected` or `security` ones, which replace whole files, duplicate the live theme first and push there instead. Tell the user why: that is the one update they should look at before customers see it. Record the duplicate's ID in AGENTS.md as the working theme for the review.
 
 # Step 7: Verify and deliver
 

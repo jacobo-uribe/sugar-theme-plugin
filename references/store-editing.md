@@ -12,13 +12,22 @@ How an agent reads and writes files on the user's Sugar Theme. Every skill that 
 
 ## Which theme
 
-The working theme's ID and the store come from the project's AGENTS.md. If they are missing, run `/sugar-theme:setup`. To see what is on the store:
+The working theme's ID and the store come from the project's AGENTS.md. If they are missing, run `/sugar-theme:setup`. The working theme is always a draft unless AGENTS.md says `Live edits: yes`.
+
+**Check the theme's role at the start of every task**, before the first pull, because the user may have published or deleted it since the last session:
 
 ```bash
 shopify theme list --store STORE.myshopify.com
 ```
 
-The first command against a store opens a browser sign-in; the user completes it once.
+Find the working theme's ID in the list (the first command against a store opens a browser sign-in; the user completes it once):
+
+- **Role is unpublished:** carry on.
+- **Role is live and AGENTS.md says `Live edits: no`:** the user published the draft. Duplicate the live theme once (below), record the copy as the working theme in AGENTS.md, and tell the user in one sentence that you made a new draft because the old one went live. Do not ask.
+- **Role is live and `Live edits: yes`:** carry on, and say "this is your live theme" before each change.
+- **Not in the list:** the theme is gone. Ask which theme to work on, with one button per theme, and record the answer.
+
+The check is by ID, never by name, so two themes with the same name cannot confuse it.
 
 ## The scratch folder
 
@@ -46,7 +55,7 @@ Pull the JSON template you are editing and every file you plan to change or read
 
 Work on the files in the scratch folder. Before pushing a JSON template, validate it: the file parses, every range value is inside its setting's min and max and on its step, and every block type is allowed by its parent. An invalid value does not error; the upload succeeds and the template silently renders wrong or not at all.
 
-If the task runs long, pull the JSON template again right before you push it. The theme editor writes templates too, and a stale copy would overwrite what the user did meanwhile.
+The theme editor and other sessions write files too; the push rule below re-pulls each file right before pushing so a stale copy never overwrites their work.
 
 ## Name what you place
 
@@ -71,12 +80,13 @@ shopify theme push --store STORE.myshopify.com --theme THEME_ID \
 ```
 
 - **`--nodelete` is not optional.** Without it, the CLI deletes every remote file that is not in the scratch folder, and the scratch folder holds three files.
-- **Pushing to the live theme needs `--allow-live`.** Only do this when the working theme policy in AGENTS.md is *edit directly*, and say so to the user before the push.
+- **Pushing to the live theme needs `--allow-live`.** Only when AGENTS.md says `Live edits: yes`, and say so to the user before the push.
+- **Pull each file again right before you push it.** Another session, or the user in the editor, may have changed it since your copy. If the fresh copy differs from what you pulled, re-apply your change onto the fresh copy and push that. This turns "last push wins" into "last push merges", and it is what lets two sessions share one draft.
 - A rejected push prints the error (a Liquid syntax problem, a schema the platform refuses). The theme keeps its previous version. Fix the file and push again.
 
-## Duplicate first
+## Duplicate
 
-When the policy is *duplicate first* and no working copy exists yet:
+When setup needs a draft of the live theme, or the working draft has been published:
 
 ```bash
 shopify theme duplicate --store STORE.myshopify.com --theme LIVE_THEME_ID --name "NAME"

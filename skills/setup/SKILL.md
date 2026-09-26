@@ -61,14 +61,11 @@ If the connector can't be added right now, say so and carry on. The catalog inde
 
 First, the store. Don't ask for a "myshopify address"; most users don't know it. Ask them to open their Shopify admin in a browser and paste the address from the address bar. It looks like `admin.shopify.com/store/NAME/...`, and `NAME` is the store handle: the store's address is `NAME.myshopify.com`. If they paste a `.myshopify.com` address or a custom domain instead, take the handle from that. Then run the theme list command yourself; the first Shopify command opens a browser window where they click **Log in** once, and that is the whole login.
 
-Ask the user which theme on their store they want their agent to work on, and how careful to be with it. Record the answer in AGENTS.md (see *Working Theme* below) so no other skill has to ask again at the start of every conversation.
+Then ask which theme to work on, with the AskUserQuestion tool (or your agent's equivalent): one button per theme on the store, the live one marked as what customers see. Record the answer in AGENTS.md (see *Working Theme* below) so no other skill has to ask again.
 
-Two policies cover everyone:
+**The working theme is always a draft.** If the user picked a draft, that is the working theme and nothing more is asked. If they picked the live theme, ask one more question: make a copy and work on that (recommended; they publish it when happy), or edit the live theme directly (customers see every change as it happens). On the first, duplicate the live theme now, name the copy clearly (their theme's name plus "agent draft"), and record the copy as the working theme. On the second, record the live theme and set **Live edits: yes**; every skill then says "this is your live theme" before each change.
 
-- **Duplicate first.** New work goes on a copy of the chosen theme. The user publishes when happy. The default for a store with live traffic.
-- **Edit directly.** The chosen theme is edited in place, including a live theme. For a sophisticated merchant who runs one theme and accepts the risk. When the chosen theme is live, AGENTS.md still tells the agent to say so before each change.
-
-Either way the theme is named by its ID, not "the live theme", so an agent never guesses which one is meant.
+Nobody duplicates per task. Every later session edits the same working theme, which is what keeps two sessions from ending up on three themes. The theme is recorded by ID, never by name, and the store-editing reference tells every skill to check that ID's role at the start of each task: if the draft has since been published, the agent makes a fresh draft once and updates the line, without asking.
 
 Then ask one more question, in plain words, and record the answer in AGENTS.md (see *Sharing* below): whether the user wants to help improve Sugar by sharing how they work with their agent. Three answers:
 
@@ -108,11 +105,11 @@ When a task needs a file on disk, use a scratch folder in the system temp direct
 
 ## Working Theme
 
-- **Theme:** [name] (ID [id])
-- **Policy:** duplicate first | edit directly
 - **Store:** [store].myshopify.com
+- **Working theme:** [name] (ID [id])
+- **Live edits:** no | yes
 
-Every read and write goes to this theme unless the user names another one in the conversation. Publishing is a separate act the user asks for. If the theme is live and the policy is *edit directly*, say so before each change, since customers will see it.
+Every read and write goes to the working theme unless the user names another one in the conversation. Publishing is a separate act the user does from their admin, or asks for. At the start of every task, check the working theme's role by its ID (the store-editing reference says how): if it has been published and live edits are `no`, make a fresh draft copy once, update this line, and tell the user in one sentence; if it no longer exists, ask which theme to work on. When live edits are `yes`, say "this is your live theme" before each change, since customers will see it.
 
 ## Sharing
 
@@ -134,7 +131,7 @@ The link you hand the user to review your work is a theme editor deep link to th
 
 Make sure the task names which template it is for and, on a product page, which product. The working theme comes from AGENTS.md; do not ask for it again.
 
-You may edit any theme on the user's store, including the live one, within the policy above. Before editing a live theme, make sure the user knows customers will see the change, and recommend duplicating it first if the policy allows.
+You may edit any theme on the user's store, including the live one, within the Working Theme rules above. Before editing a live theme, make sure the user knows customers will see the change.
 
 ## Logging
 
