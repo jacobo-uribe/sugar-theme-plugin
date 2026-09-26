@@ -27,7 +27,7 @@ The short text every session receives on connect. Two jobs: say what the tools a
 | Tool | Returns | Used by |
 |---|---|---|
 | `sugar_updates_since(release)` | Index entries newer than a release: id, type, title, symptoms, files, requires. | update-check |
-| `sugar_updates_search(text)` | Index entries whose title or symptoms match, for the "I hit a bug" path. | update-check, bug-report |
+| `sugar_updates_search(text)` | Index entries whose title or symptoms match, for the "I hit a bug" path. | update-check, feedback |
 | `sugar_update(id)` | The change page with its diff and any migration. | update-check |
 | `sugar_original(path, release)` | A shipped file as it was at a release, for three-way merges. | update-check |
 | `sugar_classify(path, sha256)` | Untouched / customized / unknown, with the base release. | update-check |
@@ -36,7 +36,8 @@ The short text every session receives on connect. Two jobs: say what the tools a
 
 | Tool | Returns | Used by |
 |---|---|---|
-| `report_issue(kind, …)` | Files a `bug` or a `learning`. The server checks for duplicates itself and answers either *filed* or *already known* with the existing entry and its workaround. Submissions land in a review queue; only approved entries distribute. | bug-report |
+| `report_issue(kind, …)` | Files a `bug`, `learning`, `suggestion` or `feedback`, optionally with a redacted task log. The server checks bugs and learnings for duplicates and answers either *filed* or *already known* with the existing entry and its workaround. Everything lands in a review queue: approved bugs and learnings distribute to agents; suggestions and feedback go to the Sugar team only. | feedback |
+| `share_session(mode, …)` | Sends a task summary (`summaries`) or a redacted conversation (`sessions`) after a task, only when AGENTS.md records that choice. Stored under the user's account, never distributed. | feedback (end of task) |
 | `get_learnings(scope)` | Approved learnings and open bugs for a scope: a component slug, a skill name, or `global`. Called by a skill at its first step, never after the error has already happened. | clone, build, freestyle, enhance, speed-optimization |
 
 Bugs carry a status: open, fixed in a release, or won't fix. Open bugs distribute exactly like learnings, scoped to their files, with the workaround and the expected fix. A fixed bug drops out of distribution and becomes an available update, which is the update-check skill's job, so a solved problem never costs context.
@@ -57,9 +58,13 @@ Bugs carry a status: open, fixed in a release, or won't fix. Open bugs distribut
 
 Search-after-failure is not a delivery path. The point of a learning is to prevent the error, not to explain it afterwards.
 
+## Sharing
+
+Setup asks once whether the user wants to share how they work: `none` (default), `summaries` or `sessions`, recorded as one line in AGENTS.md and changeable there. Summaries are short structured recaps with no conversation text, the signal for how people build with Sugar at scale. Sessions are redacted conversations for users who choose to give them. Both are stored under the user's account and are never distributed to other agents. A task log attached to a report is the same shape as a summary plus the error text, sent per incident on a yes.
+
 ## Review queue
 
-Every report enters unapproved. Someone on the Sugar team reads it, turns a learning into a docs line or a global note, turns a bug into a change in the updates index, or rejects it. Nothing a merchant's agent sends reaches another merchant's agent until then. This is what keeps one agent's mistaken "quirk" from teaching every other agent the same mistake.
+Every report enters unapproved. Someone on the Sugar team reads it, turns a learning into a docs line or a global note, turns a bug into a change in the updates index, moves a suggestion to the roadmap, answers or files feedback, or rejects it. Nothing a merchant's agent sends reaches another merchant's agent until then. This is what keeps one agent's mistaken "quirk" from teaching every other agent the same mistake.
 
 ## Testing
 

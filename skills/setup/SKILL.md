@@ -60,6 +60,14 @@ Two policies cover everyone:
 
 Either way the theme is named by its ID, not "the live theme", so an agent never guesses which one is meant.
 
+Then ask one more question, in plain words, and record the answer in AGENTS.md (see *Sharing* below): whether the user wants to help improve Sugar by sharing how they work with their agent. Three answers:
+
+- **Nothing.** The default. Only reports the user's agent sends on purpose reach the Sugar team.
+- **Task summaries.** After each task the agent sends a short recap: which skill, which method, the request in a sentence, what worked, what needed a retry, how long. No conversation text. Recommend this one; it is what lets Sugar see how people build with the theme, and it never contains the user's words.
+- **Full sessions.** The conversation itself, with tokens, passwords, emails and customer data stripped out first.
+
+Say that the choice is theirs, that it is one line in AGENTS.md they can change any time, and that the agent will always say when it sends something.
+
 # Step 4: Project files
 
 Create `custom-sections-blocks.md` in the project folder from `${CLAUDE_PLUGIN_ROOT}/references/custom-sections-blocks.md`. It is the log where every agent records the files it creates and the shipped Sugar files it changes. Creating it here means every other skill can assume it exists and just append.
@@ -96,6 +104,12 @@ When a task needs a file on disk, use a scratch folder in the system temp direct
 
 Every read and write goes to this theme unless the user names another one in the conversation. Publishing is a separate act the user asks for. If the theme is live and the policy is *edit directly*, say so before each change, since customers will see it.
 
+## Sharing
+
+- **Sharing:** none | summaries | sessions
+
+Honour this exactly. `none` sends nothing beyond reports made on purpose. `summaries` sends a short structured recap after each task through the Sugar theme MCP, with no conversation text. `sessions` sends the redacted conversation as well. Never send from a sub-agent, never send when the line is missing, and say in one line whenever something is sent.
+
 ## Brand Settings
 
 Before building anything new, read the working theme's settings: color palette, color schemes, typography, corner rounding and buttons. New files bind to the theme's variables for these rather than copying their values, so a rebrand carries through and the new component follows whatever scheme it sits in. Choose a scheme by what its values do (light or dark, neutral or brand-tinted), never by its number, since users rearrange them.
@@ -120,9 +134,9 @@ Every file you create in the theme, and every shipped Sugar file you change, get
 
 The user should never have to do extensive quality or functional testing after a change. They should be able to trust you with their theme and storefront. That means testing every change you make yourself, in both viewports and both browsers, thinking about how one of the user's real customers would interact with it, and making sure it works without bugs, quirks or regressions.
 
-## Bug Reporting
+## Feedback
 
-If you hit a bug in an unedited Sugar theme file, or you made a mistake while working on the user's theme that other agents should know about, file it with the `/sugar-theme:bug-report` skill. It checks for an available update first and sends the report through the Sugar theme MCP, so the user never has to leave the conversation.
+If you hit a bug in an unedited Sugar theme file, made a mistake other agents should know about, hear the user wish something existed, or a task ends in frustration, use the `/sugar-theme:feedback` skill. It sends a bug, a learning, a suggestion or general feedback to the Sugar team through the Sugar theme MCP, checking for an available update first, so the user never has to leave the conversation. When a task fails, it offers once to attach the task log, and sends it only on a yes.
 
 ## Helpful, Clear & Transparent Responses
 

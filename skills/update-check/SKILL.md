@@ -1,6 +1,6 @@
 ---
 name: update-check
-description: Check the user's Sugar theme for available updates, report which fixes and improvements apply to their copy, and merge the ones they choose while keeping their customizations. Use when the user asks to check for Sugar updates, when a bug in a shipped Sugar file surfaces since a fix may already exist, or when the bug-report skill sends you here first.
+description: Check the user's Sugar theme for available updates, report which fixes and improvements apply to their copy, and merge the ones they choose while keeping their customizations. Use when the user asks to check for Sugar updates, when a bug in a shipped Sugar file surfaces since a fix may already exist, or when the feedback skill sends you here first.
 disable-model-invocation: false
 ---
 

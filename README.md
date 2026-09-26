@@ -25,7 +25,7 @@ Then connect the Sugar theme MCP by hand in your agent's MCP settings, and run t
 
 ## Layout
 
-- `skills/` — one folder per skill (`setup`, `clone`, `build`, `freestyle`, `ask`, `enhance`, `variations`, `speed-optimization`, `update-check`, `bug-report`)
+- `skills/` — one folder per skill (`setup`, `clone`, `build`, `freestyle`, `ask`, `enhance`, `variations`, `speed-optimization`, `update-check`, `feedback`)
 - `references/` — shared documents the skills read: `store-editing`, `creation-methods`, `new-file-creation`, `variations`, `custom-sections-blocks` (log template), `catalog-index` (generated)
 - `docs/MCP.md` — the contract for the Sugar theme MCP the skills call
 
