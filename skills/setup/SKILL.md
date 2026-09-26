@@ -6,84 +6,91 @@ disable-model-invocation: false
 
 # Overview
 
-This skill installs and checks every tool the user needs on their device to edit their Sugar Theme and Shopify storefront with AI agents, connects them to the Sugar Theme MCP, and writes the project's system prompt into AGENTS.md.
+This skill installs and checks every tool the user needs on their device to edit their Sugar Theme and Shopify storefront with AI agents, connects them to their store and to the Sugar Theme MCP, and writes the project's system prompt into AGENTS.md.
 
-The user's project folder is not their theme. It holds AGENTS.md, the custom-files log and the agent's screenshots. Theme files are edited on the user's store and never kept in this folder. Read `${CLAUDE_PLUGIN_ROOT}/references/store-editing.md` before Step 3 so the rules you write into AGENTS.md match how the other skills work. (`${CLAUDE_PLUGIN_ROOT}` is the plugin's root folder, two levels above this skill file, for an agent that does not fill the variable in.)
+The user's project folder is not their theme. It holds AGENTS.md, the custom-files log and the agent's screenshots. Theme files are edited on the user's store and never kept in this folder. Read `${CLAUDE_PLUGIN_ROOT}/references/store-editing.md` before Step 2 so the rules you write into AGENTS.md match how the other skills work. (`${CLAUDE_PLUGIN_ROOT}` is the plugin's root folder, two levels above this skill file, for an agent that does not fill the variable in.)
+
+**Most users are in the Claude desktop app.** Everything they do themselves happens with clicks there; never tell them to open a terminal, and never run `claude` commands, which are not available inside the app. Commands are yours to run.
+
+**Tell the user up front what to expect**, in two sentences: setup takes a few minutes, mostly installs that run on their own, and they will sign in twice, once to Shopify so the agent can reach their theme, once to Sugar for the docs and updates. If their storefront is password-protected there is one more: the store password, typed once into each of the agent's two browsers.
 
 # Step 1: Tools
 
-Check the following, install what is missing and update what is out of date:
+Nothing here needs an administrator password, so you do all of it. Check what exists, install what is missing, update what is old.
 
-- **Claude Code 2.1.277 or later.** Earlier versions do not read AGENTS.md on their own. If the user can't update, Step 4 has the fallback.
-- **Node.js**
-- **Shopify CLI**
-- **sharp**, the image library behind the plugin's `scripts/zoom.js`, which crops and enlarges screenshots and puts a reference and a clone side by side: `npm install -g sharp` once Node is in place. No compiler, no Python.
-- **Playwright, Chrome and Safari engines.** Both run headless by default so no window opens and nothing steals focus while the agent checks its own work. Explain to the user what headless means and offer the visible version after installation if they want to watch the agent work.
+- **Node.js**, installed for the user only, so no password is ever asked. If `node` is missing or older than the current LTS:
 
-**Installing from nothing.** On a machine with none of these, install Homebrew from brew.sh, then:
+  ```bash
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+  ```
 
-```bash
-brew install node
-npm install -g @shopify/cli
-```
+  then, in a fresh shell, `nvm install --lts`. Do not use Homebrew for this: its installer asks for the user's password in a terminal, which you cannot type and they should not have to.
+- **Shopify CLI**: `npm install -g @shopify/cli@latest`. Run it again to update. npm prints a warning that it blocked an install script belonging to `esbuild`; that is expected and harmless, say so if the user sees it.
+- **sharp**, the image library behind the plugin's `scripts/zoom.js`, which crops and enlarges screenshots and puts a reference and a clone side by side: `npm install -g sharp`. No compiler, no Python.
+- **Two headless browsers.** The plugin registers both as MCP servers itself (Chrome and Safari's engine), so there is nothing to add or configure. Fetch the engines once:
 
-Install the two browsers as MCP servers so every session and subagent can use them:
+  ```bash
+  npx -y @playwright/mcp@latest install-browser chromium
+  npx -y @playwright/mcp@latest install-browser webkit
+  ```
 
-```bash
-claude mcp add -s user playwright -- npx @playwright/mcp@latest --headless --output-dir /tmp/playwright-mcp
-claude mcp add -s user playwright-safari -- npx @playwright/mcp@latest --headless --browser webkit --output-dir /tmp/playwright-mcp
-npx @playwright/mcp@latest install-browser webkit
-```
+  Both run headless by default: no window opens and nothing steals focus while the agent checks its own work. Explain what headless means and offer the visible version after setup if they want to watch the agent work.
 
-The first entry drives the Google Chrome already on the computer and downloads nothing. If Chrome isn't installed, register it with `--browser chromium` instead and run `npx @playwright/mcp@latest install-browser chromium` to fetch a copy. The second is WebKit, Safari's engine, about 78 MB. If either name already exists without `--headless`, remove it (`claude mcp remove -s user <name>`) and add it again, or a window will open in every session. New MCP entries only load in a new session, so tell the user to restart before the smoke test.
+If a tool is already installed and current, say so and move on; do not reinstall.
 
-**Smoke test.** Open a page of the user's store in each browser and take a screenshot. Open the cart drawer and confirm it moves across several frames. Confirm the app in front of the user did not change. On a password-protected store each browser keeps its own login, so the user enters the storefront password once per browser here and never again.
+**Smoke test.** Once the store is known (Step 2), open a page of the user's store in each browser and take a screenshot. Open the cart drawer and confirm it moves across several frames. Confirm the app in front of the user did not change. On a password-protected store each browser keeps its own login, so the user enters the storefront password once per browser here and never again. If the browsers do not answer yet, record `Setup: smoke test pending` in AGENTS.md (see *Working Theme*) so the next conversation finishes it, and carry on.
 
 After installation, tell the user what each tool does, specifically how it helps them edit their Sugar Theme.
 
-# Step 2: Connect to the Sugar Theme MCP
+# Step 2: Store and working theme
 
-The Sugar Theme MCP is the connection to Sugar's component docs, known issues, update checks and feedback. Signing in with the user's Sugar account identifies them for all of it; nothing about their license or store is typed into a file.
+The store first. Don't ask for a "myshopify address"; most users don't know it. Ask them to open their Shopify admin in a browser and paste the address from the address bar. It looks like `admin.shopify.com/store/NAME/...`, and `NAME` is the store handle: the store's address is `NAME.myshopify.com`. If they paste a `.myshopify.com` address or a custom domain instead, take the handle from that.
 
-**Most users are in the Claude desktop app, and everything happens with clicks there. Never tell them to open a terminal.** Check first whether a connector called Sugar Theme is already connected; if the MCP tools answer, it is, and this step is done. Otherwise give them these steps, exactly:
+Then run the theme list command yourself (see the store-editing reference). The first Shopify command opens a browser window where they click **Log in** once, and that is the whole Shopify login; say so before you run it.
+
+Ask which theme to work on, with the AskUserQuestion tool (or your agent's equivalent): one button per theme on the store, the live one marked as what customers see.
+
+**The working theme is always a draft.** If the user picked a draft, that is the working theme and nothing more is asked. If they picked the live theme, ask one more question: make a copy and work on that (recommended; they publish it when happy), or edit the live theme directly (customers see every change as it happens). On the first, duplicate the live theme now, name the copy clearly (their theme's name plus "agent draft"), and remember the copy as the working theme. On the second, remember the live theme and **Live edits: yes**; every skill then says "this is your live theme" before each change.
+
+Nobody duplicates per task. Every later session edits the same working theme, which is what keeps two sessions from ending up on three themes. The theme is recorded by ID, never by name, and the store-editing reference tells every skill to check that ID's role at the start of each task: if the draft has since been published, the agent makes a fresh draft once and updates the line, without asking.
+
+# Step 3: Connect to the Sugar Theme MCP
+
+The Sugar Theme MCP is the connection to Sugar's component docs, known issues, update checks and feedback. Signing in with the user's Sugar account identifies them for all of it; nothing about their license or store is typed into a file. This is the second and last sign-in.
+
+Check first whether a connector called Sugar Theme is already connected: if the MCP tools answer, it is, and this step is done. Otherwise give them these steps, exactly:
 
 1. Click the **+** button at the bottom of the chat, then **Connectors**, then **Manage connectors**.
 2. Choose **Add custom connector**. Name it **Sugar Theme** and paste this address: `https://app.sugarthe.me/api/mcp`.
 3. Click **Connect** and sign in with the Sugar account they bought the theme with. A browser window opens for that; nothing else to type.
 
-When a Sugar Theme connector exists but shows **Reconnect**, they click that instead. If the user is in a terminal rather than the app, the plugin already registers the MCP; they run `/mcp`, choose `sugar` and sign in.
+The tools become available in the same conversation a few seconds after they sign in; check, then continue. When a Sugar Theme connector exists but shows **Reconnect**, they click that instead. If the user is in a terminal rather than the app, the plugin already registers the MCP; they run `/mcp`, choose `sugar` and sign in.
 
 Then auto-update, so the skills stay current: in the same **+** menu, **Plugins**, find the **Sugar** marketplace and turn on auto-update. It is off by default for marketplaces that aren't Anthropic's. In a terminal it is `/plugin`, Marketplaces, Sugar.
 
 If the connector can't be added right now, say so and carry on. The catalog index in the plugin covers the build skills; only component docs, learnings, update checks and feedback need the server.
 
-# Step 3: Working theme
+# Step 4: Sharing
 
-First, the store. Don't ask for a "myshopify address"; most users don't know it. Ask them to open their Shopify admin in a browser and paste the address from the address bar. It looks like `admin.shopify.com/store/NAME/...`, and `NAME` is the store handle: the store's address is `NAME.myshopify.com`. If they paste a `.myshopify.com` address or a custom domain instead, take the handle from that. Then run the theme list command yourself; the first Shopify command opens a browser window where they click **Log in** once, and that is the whole login.
-
-Then ask which theme to work on, with the AskUserQuestion tool (or your agent's equivalent): one button per theme on the store, the live one marked as what customers see. Record the answer in AGENTS.md (see *Working Theme* below) so no other skill has to ask again.
-
-**The working theme is always a draft.** If the user picked a draft, that is the working theme and nothing more is asked. If they picked the live theme, ask one more question: make a copy and work on that (recommended; they publish it when happy), or edit the live theme directly (customers see every change as it happens). On the first, duplicate the live theme now, name the copy clearly (their theme's name plus "agent draft"), and record the copy as the working theme. On the second, record the live theme and set **Live edits: yes**; every skill then says "this is your live theme" before each change.
-
-Nobody duplicates per task. Every later session edits the same working theme, which is what keeps two sessions from ending up on three themes. The theme is recorded by ID, never by name, and the store-editing reference tells every skill to check that ID's role at the start of each task: if the draft has since been published, the agent makes a fresh draft once and updates the line, without asking.
-
-Then ask one more question, in plain words, and record the answer in AGENTS.md (see *Sharing* below): whether the user wants to help improve Sugar by sharing how they work with their agent. Three answers:
+Now that the MCP is connected, ask one question, in plain words: whether the user wants to help improve Sugar by sharing how they work with their agent. Three answers:
 
 - **Nothing.** The default. Only reports the user's agent sends on purpose reach the Sugar team.
 - **Task summaries.** After each task the agent sends a structured recap of the whole task, a few short paragraphs, not a sentence: what the user set out to do, what was built and where (sections and blocks by their display names, new files by name), which method and why, what went wrong and how it was fixed, what was left for later, and how the user reacted. Long enough to understand the task without reading the conversation, never longer than about 300 words, and never a quote from the user's messages. A long session produces one recap per task, not one for the session. Recommend this one; it is what lets Sugar see how people build with the theme without reading anyone's conversation.
 - **Full sessions.** The conversation itself, with tokens, passwords, emails and customer data stripped out first.
 
-Say that the choice is theirs, that it is one line in AGENTS.md they can change any time, and that the agent will always say when it sends something.
+Say that the choice is theirs, that it is one line in AGENTS.md they can change any time, and that the agent will always say when it sends something. If the MCP isn't connected, the choice is recorded anyway and takes effect once it is; say so.
 
-# Step 4: Project files
+# Step 5: Project files
 
-Create `custom-sections-blocks.md` in the project folder from `${CLAUDE_PLUGIN_ROOT}/references/custom-sections-blocks.md`. It is the log where every agent records the files it creates and the shipped Sugar files it changes. Creating it here means every other skill can assume it exists and just append.
+Write the files now, once, with every value known. Never write AGENTS.md with placeholders: if a value is missing because a step was skipped, leave that line out and write `Setup: incomplete, <what is missing>` in the Working Theme block so any skill that reads it sends the user back here.
 
-Then handle the system prompt. Check the project folder for AGENTS.md and CLAUDE.md, and check the folders above it for a CLAUDE.md. Claude Code reads a CLAUDE.md instead of AGENTS.md whenever one exists in the folder or any parent, so:
+Create `custom-sections-blocks.md` in the project folder from `${CLAUDE_PLUGIN_ROOT}/references/custom-sections-blocks.md`: copy the file as it is; its instructions and examples are inside comments. It is the log where every agent records the files it creates and the shipped Sugar files it changes. Creating it here means every other skill can assume it exists and just append.
+
+Then the system prompt. Check the project folder for AGENTS.md and CLAUDE.md, and check the folders above it for a CLAUDE.md. Claude Code reads a CLAUDE.md instead of AGENTS.md whenever one exists in the folder or any parent, so:
 
 - **Neither exists:** write AGENTS.md from the contents below.
 - **AGENTS.md exists:** add to it intelligently, making sure the new content neither repeats nor contradicts what is there. If it conflicts, show the user the conflict and offer to amend it or to start a fresh project.
-- **A CLAUDE.md exists here or above:** write AGENTS.md as usual, then add one line to the CLAUDE.md, `@AGENTS.md`, so it imports the new file. This is also the fallback for a Claude Code version older than 2.1.277.
+- **A CLAUDE.md exists here or above:** write AGENTS.md as usual, then add one line to the CLAUDE.md, `@AGENTS.md`, so it imports the new file. This is also the fallback for a terminal Claude Code older than 2.1.277, the first version that reads AGENTS.md on its own; the desktop app keeps itself current.
 
 # System Prompt Contents
 
@@ -108,6 +115,7 @@ When a task needs a file on disk, use a scratch folder in the system temp direct
 - **Store:** [store].myshopify.com
 - **Working theme:** [name] (ID [id])
 - **Live edits:** no | yes
+- **Setup:** complete | smoke test pending | incomplete, <what is missing>
 
 Every read and write goes to the working theme unless the user names another one in the conversation. Publishing is a separate act the user does from their admin, or asks for. At the start of every task, check the working theme's role by its ID (the store-editing reference says how): if it has been published and live edits are `no`, make a fresh draft copy once, update this line, and tell the user in one sentence; if it no longer exists, ask which theme to work on. When live edits are `yes`, say "this is your live theme" before each change, since customers will see it.
 

@@ -3,6 +3,28 @@
     "sugar": {
       "type": "http",
       "url": "https://app.sugarthe.me/api/mcp"
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@latest",
+        "--headless",
+        "--output-dir",
+        "/tmp/playwright-mcp"
+      ]
+    },
+    "playwright-safari": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@latest",
+        "--headless",
+        "--browser",
+        "webkit",
+        "--output-dir",
+        "/tmp/playwright-mcp"
+      ]
     }
   }
 }
