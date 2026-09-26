@@ -38,11 +38,15 @@ To clone accurately, analyze the following aspects of the reference:
 
 ## Images
 
-A reference tells you exactly which images the clone needs and how they are treated: a cut-out product on transparent background, a lifestyle photo behind text, an icon set, a portrait. List them in the analysis. Then offer to create them with an image tool the user has connected, such as the Higgsfield MCP or a similar generator, or to use images already in their store or on their computer. A clone with the right layout and the wrong pictures still looks wrong.
+A reference tells you exactly which images the clone needs and how they are treated: a cut-out product on transparent background, a lifestyle photo behind text, a custom icon set, a portrait. List them in the analysis. Then offer to create them with an image tool the user has connected, such as the Higgsfield MCP or a similar generator, or to use images already in their store or on their computer. A clone with the right layout and the wrong pictures still looks wrong. Visuals never block the build, though: if the user wants to sort out images later, build the layout now and leave the picks for them.
+
+In some cases, downloading and using the same image from the reference is fine. For example when it comes to an icon or a guarantee badge, assuming it fits the user's product & brand. In other cases, it can be used as a reference for generating a new image, so that the AI image model has a better starting point.
+
+Icons follow a fixed order. First, match each icon in the reference to the Sugar icon library at https://sugarthe.me/icons (Material, Lucide, Phosphor, Heroicons, brand logos, emoji), which needs no file at all. If there is no match, download the reference's icon image. Only as a last resort draw it as SVG code and upload that as an image. Where the reference uses a short autoplay video, treat it like an image: reuse, recreate or defer.
 
 ## Reading a screenshot
 
-When the only reference is a screenshot, or a detail is too small to read, use the plugin's zoom tool rather than guessing: `python3 ${CLAUDE_PLUGIN_ROOT}/scripts/zoom.py grid` overlays pixel coordinates so you can measure gaps and padding, and `crop` enlarges a region so borders, icon strokes and small type become legible. When the page is live, prefer the browser: an element screenshot at device scale 2 is sharper than any crop of a screenshot.
+When the only reference is a screenshot, or a detail is too small to read, use the plugin's zoom tool rather than guessing: `node ${CLAUDE_PLUGIN_ROOT}/scripts/zoom.js grid` overlays pixel coordinates so you can measure gaps and padding, and `crop` enlarges a region so borders, icon strokes and small type become legible. When the page is live, prefer the browser: an element screenshot at device scale 2 is sharper than any crop of a screenshot.
 
 ## Fonts
 
@@ -84,7 +88,7 @@ Once the user has picked a method from your suggestions, build the clone in the 
 
 Once the clone is on the theme, verify that it looks exactly like the reference. Open the page's preview so you see it the way a live customer would. Compare it side by side with the reference **in both viewports and in both Chrome and Safari**, using the two headless browsers installed by setup.
 
-Put the two next to each other rather than flipping between tabs: `python3 ${CLAUDE_PLUGIN_ROOT}/scripts/zoom.py side reference.png clone.png` joins them at the same width, and `crop` on both at the same box shows whether a padding or a border really matches.
+Put the two next to each other rather than flipping between tabs: `node ${CLAUDE_PLUGIN_ROOT}/scripts/zoom.js side reference.png clone.png` joins them at the same width, and `crop` on both at the same box shows whether a padding or a border really matches.
 
 This covers functionality as well as design. If the clone does not match, diagnose the gap, fix it and test again. The task is not complete until it looks exactly like the reference and is fully functional.
 

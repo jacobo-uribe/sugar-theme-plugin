@@ -25,7 +25,7 @@ Read the working theme's brand settings before proposing anything: the new file 
 
 Because this skill is usually invoked in an exploratory prompt or phase, offer the user multiple options for what can be created. Present them with the AskUserQuestion tool, saying clearly what each section or component would look like and why it is a good fit for the goal.
 
-Say which images the build needs and why before building, and offer to create them with an image tool the user has connected, such as the Higgsfield MCP or a similar generator, or to use images already in their store or on their computer. Never ship a placeholder where an image should be.
+Say which images the build needs and why before building, and offer to create them with an image tool the user has connected, such as the Higgsfield MCP or a similar generator, or to use images already in their store or on their computer. Never ship a placeholder where an image should be unless the user wants to defer the creation of the image until later.
 
 The user may like more than one suggestion and ask to see them all built before picking a final version. Read `${CLAUDE_PLUGIN_ROOT}/references/variations.md` so you know exactly how to build and deliver variations in context on the theme.
 

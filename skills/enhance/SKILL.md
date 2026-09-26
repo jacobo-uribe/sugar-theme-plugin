@@ -25,7 +25,7 @@ Below are some suggestions on what makes a section or block feel more premium. O
 
 - Background design (images, gradients, shaders, grids, meshes, etc.)
 - Text accents and/or animations (color highlights, underlines, typing animations, etc.)
-- Cutout images (images with transparent backgrounds go a long way). Offer to create the images an enhancement needs with an image tool the user has connected, such as the Higgsfield MCP or a similar generator, or to cut out and reuse ones they already have
+- Cutout images (images with transparent backgrounds go a long way). Offer to create the images an enhancement needs with an image tool the user has connected, such as the Higgsfield MCP or a similar generator, or to cut out and reuse ones they already have; the user can also defer the images and take the enhancement without them for now
 - Subtle animations (tasteful hover, click or passive animations, color highlights, etc.)
 - Information display: tooltips, popups or brand new components that display more information about a particular claim or concept
 - Surrounding components: in some cases an enhancement depends on the surrounding components, or even the whole page's design and functionality. Consider them when deliberating.
