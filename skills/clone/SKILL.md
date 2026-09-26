@@ -15,7 +15,7 @@ Create blocks and sections inside the user's Sugar theme that match a reference:
 - **Target template and product** named by the user, so you know where the clone goes and whether it should be linked to a particular product.
 - **A reference:** a screenshot, a page URL, or an element tagged in the built-in browser. Without one there is nothing to clone.
 
-Files are read from and written to the store as described in `${CLAUDE_PLUGIN_ROOT}/references/store-editing.md`.
+Files are read from and written to the store as described in `${CLAUDE_PLUGIN_ROOT}/references/store-editing.md`. (`${CLAUDE_PLUGIN_ROOT}` is the plugin's root folder, two levels above this skill file, for an agent that does not fill the variable in.)
 
 # Step 1: Analysis
 

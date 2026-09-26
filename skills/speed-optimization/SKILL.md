@@ -13,7 +13,7 @@ Analyze a template on the user's theme, relentlessly and aggressively looking fo
 - **Working theme** from the project's AGENTS.md. If it is missing, run `/sugar-theme:setup` first.
 - **A page to test:** the template and, for a product page, the product. If the user doesn't provide one, ask.
 
-Files are read from and written to the store as described in `${CLAUDE_PLUGIN_ROOT}/references/store-editing.md`.
+Files are read from and written to the store as described in `${CLAUDE_PLUGIN_ROOT}/references/store-editing.md`. (`${CLAUDE_PLUGIN_ROOT}` is the plugin's root folder, two levels above this skill file, for an agent that does not fill the variable in.)
 
 # Step 1: Testing
 
@@ -57,7 +57,7 @@ Rank every optimization by highest impact and lowest blast radius, meaning how m
 
 Present the optimizations to the user in that ranked order, offering first to make the changes least likely to affect their store's look or functionality, such as compressing images and videos.
 
-Use the AskUserQuestion tool so the user picks the optimizations they want. Be transparent about each one so they understand the trade-offs, especially when a change touches files that affect pages beyond this one, or removes an app they may rely on. Do not be overly cautious; trust your skill and expertise.
+Use the AskUserQuestion tool (or your agent's equivalent) so the user picks the optimizations they want. Be transparent about each one so they understand the trade-offs, especially when a change touches files that affect pages beyond this one, or removes an app they may rely on. Do not be overly cautious; trust your skill and expertise.
 
 # Step 4: Optimize & Verify
 

@@ -15,7 +15,7 @@ Create blocks and sections inside the user's Sugar theme based on a general goal
 - **Target template and product** named by the user, so you know where to build and whether a particular product should be linked.
 - **A goal, concept or idea** for what will be built. Example prompt: "I want to build a section that displays authority on our product page that includes images and endorsements of clinical experts."
 
-Files are read from and written to the store as described in `${CLAUDE_PLUGIN_ROOT}/references/store-editing.md`.
+Files are read from and written to the store as described in `${CLAUDE_PLUGIN_ROOT}/references/store-editing.md`. (`${CLAUDE_PLUGIN_ROOT}` is the plugin's root folder, two levels above this skill file, for an agent that does not fill the variable in.)
 
 # Step 1: Brainstorm
 
@@ -23,7 +23,7 @@ Thoroughly analyze the user's request, their existing design components, their s
 
 Ground the options in what the theme can do. Read the plugin's catalog index to see which Sugar sections and blocks exist, and the project's `custom-sections-blocks.md` for files other agents have built in this theme. Read the working theme's brand settings so every option is proposed in the user's typography and colors, not generic ones.
 
-Because this skill is usually invoked in an exploratory prompt or phase, offer the user multiple options for what can be created. Present them with the AskUserQuestion tool, saying clearly what each section or component would look like and why it is a good fit for the goal.
+Because this skill is usually invoked in an exploratory prompt or phase, offer the user multiple options for what can be created. Present them with the AskUserQuestion tool (or your agent's equivalent), saying clearly what each section or component would look like and why it is a good fit for the goal.
 
 Say which images the build needs and why before building, and offer to create them with an image tool the user has connected, such as the Higgsfield MCP or a similar generator, or to use images already in their store or on their computer. Never ship a placeholder where an image should be unless the user wants to defer the creation of the image until later.
 

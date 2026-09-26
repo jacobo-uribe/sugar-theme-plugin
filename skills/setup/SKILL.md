@@ -8,7 +8,7 @@ disable-model-invocation: false
 
 This skill installs and checks every tool the user needs on their device to edit their Sugar theme and Shopify storefront with AI agents, connects them to the Sugar theme MCP, and writes the project's system prompt into AGENTS.md.
 
-The user's project folder is not their theme. It holds AGENTS.md, the custom-files log and the agent's screenshots. Theme files are edited on the user's store and never kept in this folder. Read `${CLAUDE_PLUGIN_ROOT}/references/store-editing.md` before Step 3 so the rules you write into AGENTS.md match how the other skills work.
+The user's project folder is not their theme. It holds AGENTS.md, the custom-files log and the agent's screenshots. Theme files are edited on the user's store and never kept in this folder. Read `${CLAUDE_PLUGIN_ROOT}/references/store-editing.md` before Step 3 so the rules you write into AGENTS.md match how the other skills work. (`${CLAUDE_PLUGIN_ROOT}` is the plugin's root folder, two levels above this skill file, for an agent that does not fill the variable in.)
 
 # Step 1: Tools
 

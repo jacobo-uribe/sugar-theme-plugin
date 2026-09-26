@@ -6,7 +6,7 @@ disable-model-invocation: false
 
 # Overview
 
-Variations are built on the theme, in context, in one file, so the user judges them where they will live and the winner is already built. Read `${CLAUDE_PLUGIN_ROOT}/references/variations.md` for exactly how to plan, scaffold, deliver and clean up variations. This skill adds nothing to that reference; it exists so a user can ask for variations directly.
+Variations are built on the theme, in context, in one file, so the user judges them where they will live and the winner is already built. Read `${CLAUDE_PLUGIN_ROOT}/references/variations.md` for exactly how to plan, scaffold, deliver and clean up variations. This skill adds nothing to that reference; it exists so a user can ask for variations directly. (`${CLAUDE_PLUGIN_ROOT}` is the plugin's root folder, two levels above this skill file, for an agent that does not fill the variable in.)
 
 # Steps
 

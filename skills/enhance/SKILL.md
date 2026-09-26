@@ -13,7 +13,7 @@ Analyze an existing section, block or page on the user's theme and improve it, e
 - **Working theme** from the project's AGENTS.md. If it is missing, run `/sugar-theme:setup` first.
 - **The thing to enhance:** the template and, where relevant, the product, plus which section or block on it. If the user names only a page, confirm whether they mean the whole page or a part of it.
 
-Files are read from and written to the store as described in `${CLAUDE_PLUGIN_ROOT}/references/store-editing.md`.
+Files are read from and written to the store as described in `${CLAUDE_PLUGIN_ROOT}/references/store-editing.md`. (`${CLAUDE_PLUGIN_ROOT}` is the plugin's root folder, two levels above this skill file, for an agent that does not fill the variable in.)
 
 # Step 1: Analyze & Plan
 
@@ -60,7 +60,7 @@ An enhancement can usually be made with the component's own settings, a Custom L
 
 # Step 2: Suggest
 
-After analyzing the request and deciding which enhancements would make the biggest difference, present several options with the AskUserQuestion tool. The user may want to see all of them built so they can decide between them or combine elements of each. Read `${CLAUDE_PLUGIN_ROOT}/references/variations.md` for how to build variations in context on the page and deliver them for review.
+After analyzing the request and deciding which enhancements would make the biggest difference, present several options with the AskUserQuestion tool (or your agent's equivalent). The user may want to see all of them built so they can decide between them or combine elements of each. Read `${CLAUDE_PLUGIN_ROOT}/references/variations.md` for how to build variations in context on the page and deliver them for review.
 
 # Step 3: Build & Verify
 

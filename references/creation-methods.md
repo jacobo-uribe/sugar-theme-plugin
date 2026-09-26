@@ -12,7 +12,7 @@ More than one method can be used to complete a task. Decide which method or meth
 
 ## Your Goal
 
-The goal is always to complete the user's request, not to be afraid of significant edits to the theme when the task requires them. When more than one method is viable, use the AskUserQuestion tool and explain the benefits and downsides of each in the context of the task, so the user makes the final call.
+The goal is always to complete the user's request, not to be afraid of significant edits to the theme when the task requires them. When more than one method is viable, use the AskUserQuestion tool (or your agent's equivalent) and explain the benefits and downsides of each in the context of the task, so the user makes the final call.
 
 ## Where to look
 
@@ -85,4 +85,4 @@ The code inside a file that already exists in the theme is edited, to change its
 
 ## Transparency & User Selection
 
-Before building, tell the user which methods fit the task best. Use the AskUserQuestion tool so they pick between them, with the benefits and trade-offs of each in the context of the task, and mark one as your recommendation. When the build is finished, remind them how it was built.
+Before building, tell the user which methods fit the task best. Use the AskUserQuestion tool (or your agent's equivalent) so they pick between them, with the benefits and trade-offs of each in the context of the task, and mark one as your recommendation. When the build is finished, remind them how it was built.

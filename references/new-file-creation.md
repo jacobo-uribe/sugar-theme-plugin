@@ -46,7 +46,7 @@ Keep settings that affect several blocks at the section level, colors, positioni
 
 # Blocks
 
-When adding a theme block, decide where it should be addable and update those allowlists. Sugar is a block-focused theme: to make a block available inside Custom Columns, add it to the **Column** block's allowlist, not the section's. Consider the other wrapper blocks where it could be useful (Container, Row, Slide, and so on). It is worth asking the user, with the AskUserQuestion tool, where they want the block to appear. Make sure it works in each context you add it to.
+When adding a theme block, decide where it should be addable and update those allowlists. Sugar is a block-focused theme: to make a block available inside Custom Columns, add it to the **Column** block's allowlist, not the section's. Consider the other wrapper blocks where it could be useful (Container, Row, Slide, and so on). It is worth asking the user, with the AskUserQuestion tool (or your agent's equivalent), where they want the block to appear. Make sure it works in each context you add it to.
 
 # File and category naming
 
