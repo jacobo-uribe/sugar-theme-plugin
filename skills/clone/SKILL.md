@@ -36,6 +36,14 @@ To clone accurately, analyze the following aspects of the reference:
 - Animation types and speed
 - Viewport differences (below)
 
+## Images
+
+A reference tells you exactly which images the clone needs and how they are treated: a cut-out product on transparent background, a lifestyle photo behind text, an icon set, a portrait. List them in the analysis. Then offer to create them with an image tool the user has connected, such as the Higgsfield MCP or a similar generator, or to use images already in their store or on their computer. A clone with the right layout and the wrong pictures still looks wrong.
+
+## Reading a screenshot
+
+When the only reference is a screenshot, or a detail is too small to read, use the plugin's zoom tool rather than guessing: `python3 ${CLAUDE_PLUGIN_ROOT}/scripts/zoom.py grid` overlays pixel coordinates so you can measure gaps and padding, and `crop` enlarges a region so borders, icon strokes and small type become legible. When the page is live, prefer the browser: an element screenshot at device scale 2 is sharper than any crop of a screenshot.
+
 ## Fonts
 
 Use the user's fonts from the theme, never the reference's. The four typography aspects above still matter: adapt the reference's sizes, weights, line height and letter spacing intelligently to the user's heading and body fonts so the clone keeps its proportions in the user's type. Loading the reference's font family would add a download to every page it sits on and give the store a font its other components don't use; a user who wants that font would change it in the theme settings, not in one component.
@@ -70,11 +78,13 @@ Decide which method, or methods, you will use to build the clone. Read `${CLAUDE
 
 **Before starting, make sure you know exactly which template and, where relevant, which product the clone is for.** The theme itself comes from AGENTS.md. If the user has not named the template or product, and nothing in the project says which to use, ask. Do not assume. If the working theme is the live theme, say so before you change it.
 
-Once the user has picked a method from your suggestions, build the clone in the target theme and template. If the method creates new files or changes shipped Sugar files, log them in the project's `custom-sections-blocks.md` when you are done.
+Once the user has picked a method from your suggestions, build the clone in the target theme and template. Name every section and block you place, as described in the store-editing reference, so the editor's sidebar says what the clone is and where it sits. If the method creates new files or changes shipped Sugar files, log them in the project's `custom-sections-blocks.md` when you are done.
 
 # Step 4: Verification
 
 Once the clone is on the theme, verify that it looks exactly like the reference. Open the page's preview so you see it the way a live customer would. Compare it side by side with the reference **in both viewports and in both Chrome and Safari**, using the two headless browsers installed by setup.
+
+Put the two next to each other rather than flipping between tabs: `python3 ${CLAUDE_PLUGIN_ROOT}/scripts/zoom.py side reference.png clone.png` joins them at the same width, and `crop` on both at the same box shows whether a padding or a border really matches.
 
 This covers functionality as well as design. If the clone does not match, diagnose the gap, fix it and test again. The task is not complete until it looks exactly like the reference and is fully functional.
 

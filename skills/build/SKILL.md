@@ -25,6 +25,8 @@ Ground the options in what the theme can do. Read the plugin's catalog index to 
 
 Because this skill is usually invoked in an exploratory prompt or phase, offer the user multiple options for what can be created. Present them with the AskUserQuestion tool, saying clearly what each section or component would look like and why it is a good fit for the goal.
 
+Say which images the build needs and why before building, and offer to create them with an image tool the user has connected, such as the Higgsfield MCP or a similar generator, or to use images already in their store or on their computer. Never ship a placeholder where an image should be.
+
 # Step 2: Method Selection
 
 Once the user has decided on a concept, or has opted for several to be built as variations, decide which method or methods you will use to build it. Read `${CLAUDE_PLUGIN_ROOT}/references/creation-methods.md` to sort through the options, then give the user the recommended ones before starting so they know how the result will look and feel and what its limitations are.
@@ -37,7 +39,7 @@ The user may want different variations built so they can judge visually what sat
 
 **Before starting, make sure you know exactly which template and, where relevant, which product you are building on.** The theme itself comes from AGENTS.md. If the user has not named the template or product, and nothing in the project says which to use, ask. Do not assume. If the working theme is the live theme, say so before you change it.
 
-Once the user has picked a method from your suggestions, build inside the target theme and template. If the method creates new files or changes shipped Sugar files, log them in the project's `custom-sections-blocks.md` when you are done.
+Once the user has picked a method from your suggestions, build inside the target theme and template. Name every section and block you place, as described in the store-editing reference, so the editor's sidebar says what it is and where it sits. If the method creates new files or changes shipped Sugar files, log them in the project's `custom-sections-blocks.md` when you are done.
 
 # Step 4: Verification
 

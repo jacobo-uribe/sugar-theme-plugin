@@ -48,6 +48,16 @@ Work on the files in the scratch folder. Before pushing a JSON template, validat
 
 If the task runs long, pull the JSON template again right before you push it. The theme editor writes templates too, and a stale copy would overwrite what the user did meanwhile.
 
+## Name what you place
+
+Every section and block in a template can carry its own display name, separate from the file it comes from. The theme editor stores it as a `name` key on the entry:
+
+```json
+"hero_cmp": { "type": "classic-comparison", "name": "Comparison table · Javvy vs café", "settings": { … } }
+```
+
+Set it on everything you add or build. The editor's sidebar then reads like a page outline instead of a list of file names, so the user can find things at a glance and a later agent knows what each entry is for without opening it. Make the name specific: what it is and what it is for or where it sits, in the user's words. "Hero · comparison table" and "Under buy box · guarantee strip" beat "Custom Columns" and "Container". Keep it short enough to fit the sidebar, and put the same name in the custom-files log when the entry is a new file.
+
 ## Push
 
 Upload only the files you changed to the same theme.

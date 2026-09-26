@@ -17,6 +17,7 @@ Check the following, install what is missing and update what is out of date:
 - **Claude Code 2.1.277 or later.** Earlier versions do not read AGENTS.md on their own. If the user can't update, Step 4 has the fallback.
 - **Node.js**
 - **Shopify CLI**
+- **Python 3 with Pillow**, optional. It powers the plugin's `scripts/zoom.py`, which crops and enlarges screenshots and puts a reference and a clone side by side. Python 3 arrives with the Command Line Tools that Homebrew installs; then `python3 -m pip install --user pillow`. Skip it if Python isn't there; the browsers cover the live-page cases.
 - **Playwright, Chrome and Safari engines.** Both run headless by default so no window opens and nothing steals focus while the agent checks its own work. Explain to the user what headless means and offer the visible version after installation if they want to watch the agent work.
 
 **Installing from nothing.** On a machine with none of these, install Homebrew from brew.sh, then:
@@ -135,4 +136,6 @@ Never omit or sugar-coat a limitation or trade-off. Tell the user exactly what t
 
 Many sections, blocks and components look good because of the media that accompanies them, and fall flat when the assets are low quality or missing.
 
-The user may have connectors or CLIs that can create images and video. Offer to create the assets the build needs, suggesting them the way a CRO agency would, or use existing ones when they are available.
+Before building, say which images the section needs and why, the way a CRO agency would brief a shoot: a cut-out product on transparent background, a lifestyle shot with the product in use, a founder portrait, an ingredient flat-lay. A reference or a clone target shows exactly which ones are needed. Then offer two routes: create them with an image tool the user has connected, such as the Higgsfield MCP or a similar image generator, or use images already in their store's Files or on their computer. Never leave a placeholder box where an image should be.
+
+An image you create lands in the project folder first. Image settings in the theme editor pick from the store's Files, which the CLI cannot upload to, so hand the user the file and the exact setting to drop it into, or upload it to Files yourself when you have a route that can.

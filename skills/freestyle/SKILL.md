@@ -25,13 +25,15 @@ Read the working theme's brand settings before proposing anything: the new file 
 
 Because this skill is usually invoked in an exploratory prompt or phase, offer the user multiple options for what can be created. Present them with the AskUserQuestion tool, saying clearly what each section or component would look like and why it is a good fit for the goal.
 
+Say which images the build needs and why before building, and offer to create them with an image tool the user has connected, such as the Higgsfield MCP or a similar generator, or to use images already in their store or on their computer. Never ship a placeholder where an image should be.
+
 The user may like more than one suggestion and ask to see them all built before picking a final version. Read `${CLAUDE_PLUGIN_ROOT}/references/variations.md` so you know exactly how to build and deliver variations in context on the theme.
 
 # Step 2: Build
 
 **Before starting, make sure you know exactly which template and, where relevant, which product you are building on.** The theme itself comes from AGENTS.md. If the user has not named the template or product, and nothing in the project says which to use, ask. Do not assume. If the working theme is the live theme, say so before you change it.
 
-Once the user has decided on a concept, build the new files on their theme. Read `${CLAUDE_PLUGIN_ROOT}/references/new-file-creation.md` first and follow it: it covers choosing between section and theme blocks, the settings the user expects to find, the theme features to reuse, performance, and the design habits that make a file look generated rather than designed.
+Once the user has decided on a concept, build the new files on their theme. Name every section and block you place, as described in the store-editing reference, so the editor's sidebar says what it is and where it sits. Read `${CLAUDE_PLUGIN_ROOT}/references/new-file-creation.md` first and follow it: it covers choosing between section and theme blocks, the settings the user expects to find, the theme features to reuse, performance, and the design habits that make a file look generated rather than designed.
 
 Ask the user for the name and category the new section or block should show in the theme editor, since those are what they will see. When the build is done, log every new file in the project's `custom-sections-blocks.md` with what it does, what it depends on and when to use it, so future agents find it instead of building it again.
 

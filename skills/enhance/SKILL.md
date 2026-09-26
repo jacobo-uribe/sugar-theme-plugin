@@ -25,7 +25,7 @@ Below are some suggestions on what makes a section or block feel more premium. O
 
 - Background design (images, gradients, shaders, grids, meshes, etc.)
 - Text accents and/or animations (color highlights, underlines, typing animations, etc.)
-- Cutout images (images with transparent backgrounds go a long way)
+- Cutout images (images with transparent backgrounds go a long way). Offer to create the images an enhancement needs with an image tool the user has connected, such as the Higgsfield MCP or a similar generator, or to cut out and reuse ones they already have
 - Subtle animations (tasteful hover, click or passive animations, color highlights, etc.)
 - Information display: tooltips, popups or brand new components that display more information about a particular claim or concept
 - Surrounding components: in some cases an enhancement depends on the surrounding components, or even the whole page's design and functionality. Consider them when deliberating.
@@ -64,7 +64,7 @@ After analyzing the request and deciding which enhancements would make the bigge
 
 # Step 3: Build & Verify
 
-Once the user has chosen an enhancement or several, build them. If the method is the live theme, say so before you change it. If it creates new files or changes shipped Sugar files, log them in the project's `custom-sections-blocks.md` when you are done.
+Once the user has chosen an enhancement or several, build them. Name every section and block you place, as described in the store-editing reference, so the editor's sidebar says what it is and where it sits. If the method is the live theme, say so before you change it. If it creates new files or changes shipped Sugar files, log them in the project's `custom-sections-blocks.md` when you are done.
 
 Then verify that the enhancements look and work properly. Open the page's preview so you see it the way a live customer would. Click around to test the functionality. Check both viewports, in both Chrome and Safari using the two headless browsers installed by setup; desktop may look right while mobile has bugs. Compare against how the component looked before, so the improvement is real and nothing around it regressed.
 
