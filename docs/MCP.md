@@ -4,7 +4,7 @@ The MCP server bundled with the plugin. This page is the contract the skills are
 
 ## Access
 
-- **Remote MCP on sugarthe.me**, connected once during setup through a browser sign-in with the user's Sugar license. The license identifies the user for every call, so no skill asks for an email, license key or store, and every report and update check is attributed automatically.
+- **Remote MCP at `https://app.sugarthe.me/api/mcp`** (bundled in the plugin's `.mcp.json`; stateless Streamable HTTP), connected once during setup through a browser sign-in with the user's Sugar license. The license identifies the user for every call, so no skill asks for an email, license key or store, and every report and update check is attributed automatically.
 - Also usable without the plugin: paste the URL into claude.ai, Cowork or any MCP client. The connect instructions (below) are the whole "how to use Sugar" primer for that audience.
 - License-gated. Anything below the theme-editor line (Liquid internals, booster-pack files, full templates, the theme zip) is served only to a valid license, so it can't be pirated by reading the plugin's public repo.
 
@@ -36,7 +36,7 @@ The short text every session receives on connect. Two jobs: say what the tools a
 
 | Tool | Returns | Used by |
 |---|---|---|
-| `report_issue(kind, …)` | Files a `bug`, `learning`, `suggestion` or `feedback`, optionally with a redacted task log. The server checks bugs and learnings for duplicates and answers either *filed* or *already known* with the existing entry and its workaround. Everything lands in a review queue: approved bugs and learnings distribute to agents; suggestions and feedback go to the Sugar team only. | feedback |
+| `report_issue(kind, …)` | Files a `bug`, `learning`, `suggestion` or `feedback`, optionally with a redacted task log and, for a bug the agent fixed itself, the fix (description, diff, verified `yes`/`no`/`unknown`). The server checks bugs and learnings for duplicates and answers either *filed* or *already known* with the existing entry and its workaround. Everything lands in a review queue: approved bugs and learnings distribute to agents; suggestions and feedback go to the Sugar team only. | feedback |
 | `share_session(mode, …)` | Sends a task summary (`summaries`) or a redacted conversation (`sessions`) after a task, only when AGENTS.md records that choice. Stored under the user's account, never distributed. | feedback (end of task) |
 | `get_learnings(scope)` | Approved learnings and open bugs for a scope: a component slug, a skill name, or `global`. Called by a skill at its first step, never after the error has already happened. | clone, build, freestyle, enhance, speed-optimization |
 

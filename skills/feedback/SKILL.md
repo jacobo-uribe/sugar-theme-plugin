@@ -28,8 +28,13 @@ Send the report with the MCP's report tool, with its kind and:
 - **Files affected**, by path, with the release stamp from each file's first line, and the theme's `theme_version`. Bugs and learnings only.
 - **Description:** what was expected, what happened, on which page and device. For a bug, the steps to reproduce it. For a learning, the wrong way and the right way, so it can become a docs line. For a suggestion, what it would let the user do that they can't today.
 - **What you tried**, and the workaround if you found one.
+- **The fix you applied**, if you fixed a bug in a shipped Sugar file yourself: what you changed and why, a unified diff of the file against the original, and whether you saw it working in the browser (`yes`), tried it and it didn't help (`no`), or applied it without checking (`unknown`). Send it either way; a fix that didn't work is still a lead.
 - **Where to see it:** the storefront preview link to the page, if the user is fine sharing it.
 - **Date.**
+
+## When you fixed it yourself
+
+Don't wait for the Sugar team. If a shipped Sugar file has a bug and you can fix it, fix it in the user's theme, verify it, and log the file in `custom-sections-blocks.md` the way any edited Sugar file is logged. Then report the bug with the fix attached. The report is what lets the fix ship to every store in the next release; without it, the user's copy stays patched and everyone else keeps hitting it.
 
 ## Attaching the task log
 
