@@ -1,6 +1,6 @@
 # New file creation
 
-How to create new section, block, asset and snippet files on a user's Sugar theme so they behave like the rest of the theme: editable the way the user expects, fast, and findable by the next agent.
+How to create new section, block, asset and snippet files on a user's Sugar Theme so they behave like the rest of the theme: editable the way the user expects, fast, and findable by the next agent.
 
 # Sections
 

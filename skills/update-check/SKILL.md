@@ -1,6 +1,6 @@
 ---
 name: update-check
-description: Check the user's Sugar theme for available updates, report which fixes and improvements apply to their copy, and merge the ones they choose while keeping their customizations. Use when the user asks to check for Sugar updates, when a bug in a shipped Sugar file surfaces since a fix may already exist, or when the feedback skill sends you here first.
+description: Check the user's Sugar Theme for available updates, report which fixes and improvements apply to their copy, and merge the ones they choose while keeping their customizations. Use when the user asks to check for Sugar updates, when a bug in a shipped Sugar file surfaces since a fix may already exist, or when the feedback skill sends you here first.
 disable-model-invocation: false
 ---
 
@@ -11,7 +11,7 @@ Sugar ships fixes and improvements as changes, not as whole-theme reinstalls. A 
 # Prerequisites
 
 - **Working theme** from the project's AGENTS.md. If it is missing, run `/sugar-theme:setup` first.
-- **The Sugar theme MCP**, connected during setup. It provides the updates index, each change's page and diff, the original of any shipped file at any release, and a classifier that tells whether a file is untouched or customized.
+- **The Sugar Theme MCP**, connected during setup. It provides the updates index, each change's page and diff, the original of any shipped file at any release, and a classifier that tells whether a file is untouched or customized.
 
 Files are read from and written to the store as described in `${CLAUDE_PLUGIN_ROOT}/references/store-editing.md`. This skill is the one case that pulls the whole theme, because every code file has to be classified. (`${CLAUDE_PLUGIN_ROOT}` is the plugin's root folder, two levels above this skill file, for an agent that does not fill the variable in.)
 

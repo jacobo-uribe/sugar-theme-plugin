@@ -1,6 +1,10 @@
-# Sugar theme MCP
+# Sugar Theme MCP
 
 The MCP server bundled with the plugin. This page is the contract the skills are written against: what the server must provide, by tool name, and which skill uses what. Build the server to this; if a tool changes shape, the skill that names it changes with it.
+
+## Where it runs
+
+`POST https://app.sugarthe.me/api/mcp`, an HTTP action on the Sugar app's Convex backend, next to the license verify and download routes; there is no separate MCP host. Sign-in is the app's own Clerk OAuth. The plugin's `.mcp.json` points at that address; in the Claude desktop app the same address is added once as a custom connector named Sugar Theme.
 
 ## Access
 
@@ -60,7 +64,7 @@ Search-after-failure is not a delivery path. The point of a learning is to preve
 
 ## Sharing
 
-Setup asks once whether the user wants to share how they work: `none` (default), `summaries` or `sessions`, recorded as one line in AGENTS.md and changeable there. Summaries are short structured recaps with no conversation text, the signal for how people build with Sugar at scale. Sessions are redacted conversations for users who choose to give them. Both are stored under the user's account and are never distributed to other agents. A task log attached to a report is the same shape as a summary plus the error text, sent per incident on a yes.
+Setup asks once whether the user wants to share how they work: `none` (default), `summaries` or `sessions`, recorded as one line in AGENTS.md and changeable there. A summary is a structured recap of one task, a few short paragraphs: the goal, what was built and where, the method, what went wrong and how it was fixed, what was left for later, how the user reacted, plus skill, method and duration as fields. No quotes from the conversation. It is the signal for how people build with Sugar at scale, and it has to stand on its own: a one-line recap is a feedback report, not a summary. Sessions are redacted conversations for users who choose to give them. Both are stored under the user's account and are never distributed to other agents. A task log attached to a report is the same shape as a summary plus the error text, sent per incident on a yes.
 
 ## Review queue
 

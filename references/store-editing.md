@@ -1,6 +1,6 @@
 # Store editing
 
-How an agent reads and writes files on the user's Sugar theme. Every skill that touches the theme follows this. The store is the only copy of the theme that counts; anything on the computer is a temporary working copy that exists for one task.
+How an agent reads and writes files on the user's Sugar Theme. Every skill that touches the theme follows this. The store is the only copy of the theme that counts; anything on the computer is a temporary working copy that exists for one task.
 
 ## The rules
 

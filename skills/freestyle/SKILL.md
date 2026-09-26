@@ -10,7 +10,7 @@ Create sections and blocks inside the user's theme with complete freedom. Instea
 
 # Prerequisites
 
-- **Sugar theme** installed on the user's Shopify store. New files still lean on its engines, icons, fonts and settings.
+- **Sugar Theme** installed on the user's Shopify store. New files still lean on its engines, icons, fonts and settings.
 - **Working theme** from the project's AGENTS.md. If it is missing, run `/sugar-theme:setup` first.
 - **Target template and product** named by the user, so you know where the new section or block goes and whether a particular product should be linked.
 - **A goal, concept or idea**, and optionally references for direction.

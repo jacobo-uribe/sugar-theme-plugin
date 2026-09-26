@@ -6,11 +6,11 @@ disable-model-invocation: false
 
 # Overview
 
-Create blocks and sections inside the user's Sugar theme that match a reference: a URL, a screenshot, or an element the user tagged in the built-in browser.
+Create blocks and sections inside the user's Sugar Theme that match a reference: a URL, a screenshot, or an element the user tagged in the built-in browser.
 
 # Prerequisites
 
-- **Sugar theme** installed on the user's Shopify store.
+- **Sugar Theme** installed on the user's Shopify store.
 - **Working theme** from the project's AGENTS.md. If it is missing, run `/sugar-theme:setup` first.
 - **Target template and product** named by the user, so you know where the clone goes and whether it should be linked to a particular product.
 - **A reference:** a screenshot, a page URL, or an element tagged in the built-in browser. Without one there is nothing to clone.

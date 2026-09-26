@@ -1,16 +1,16 @@
 ---
 name: build
-description: Create sections and blocks in the user's theme from a goal or idea, using existing Sugar theme files or completely new ones. Use when the user has a goal or an idea for a component, feature or section but gives no reference to clone. If they do share references, they are for direction and inspiration, not for cloning. Not for improving something already on the page; that is enhance. Not for matching a reference exactly; that is clone.
+description: Create sections and blocks in the user's theme from a goal or idea, using existing Sugar Theme files or completely new ones. Use when the user has a goal or an idea for a component, feature or section but gives no reference to clone. If they do share references, they are for direction and inspiration, not for cloning. Not for improving something already on the page; that is enhance. Not for matching a reference exactly; that is clone.
 disable-model-invocation: false
 ---
 
 # Overview
 
-Create blocks and sections inside the user's Sugar theme based on a general goal or idea.
+Create blocks and sections inside the user's Sugar Theme based on a general goal or idea.
 
 # Prerequisites
 
-- **Sugar theme** installed on the user's Shopify store, so sections can be built from existing components.
+- **Sugar Theme** installed on the user's Shopify store, so sections can be built from existing components.
 - **Working theme** from the project's AGENTS.md. If it is missing, run `/sugar-theme:setup` first.
 - **Target template and product** named by the user, so you know where to build and whether a particular product should be linked.
 - **A goal, concept or idea** for what will be built. Example prompt: "I want to build a section that displays authority on our product page that includes images and endorsements of clinical experts."

@@ -1,6 +1,6 @@
 # Creation methods
 
-The available ways to create pages, sections, blocks and features on a Sugar theme. For each method: what it is, when to opt for it, and its pros, cons and limitations.
+The available ways to create pages, sections, blocks and features on a Sugar Theme. For each method: what it is, when to opt for it, and its pros, cons and limitations.
 
 ## Method Ranking
 
@@ -16,14 +16,14 @@ The goal is always to complete the user's request, not to be afraid of significa
 
 ## Where to look
 
-- **Sugar's own sections and blocks** are listed in the plugin's catalog index, names and one-liners; the full docs for any component, including its settings and known issues, come from the Sugar theme MCP.
+- **Sugar's own sections and blocks** are listed in the plugin's catalog index, names and one-liners; the full docs for any component, including its settings and known issues, come from the Sugar Theme MCP.
 - **Files created by other agents in this theme**, and shipped files they changed, are logged in the project's `custom-sections-blocks.md`. Read it before deciding a component doesn't exist.
 
 # Available Methods
 
 ## Method 1: Existing Theme Files Only
 
-Use one or more sections and blocks already on the theme, with only their available settings and features. This includes the Sugar theme's own files and any files created earlier by agents in this theme.
+Use one or more sections and blocks already on the theme, with only their available settings and features. This includes the Sugar Theme's own files and any files created earlier by agents in this theme.
 
 **When to use:** existing files, with their available settings, can complete the job in its entirety.
 

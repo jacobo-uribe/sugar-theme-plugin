@@ -1,12 +1,12 @@
 ---
 name: feedback
-description: Send the Sugar team a bug, a learning, a suggestion or general feedback about the Sugar theme, the plugin or the app, without the user leaving the conversation. Use when a bug surfaces in an unedited Sugar file, when you or the user catch a mistake you made, when you learn something every agent working on Sugar should know, when the user wishes something existed, or when a task ended in frustration. Check for updates first; a bug may already be fixed.
+description: Send the Sugar team a bug, a learning, a suggestion or general feedback about the Sugar Theme, the plugin or the app, without the user leaving the conversation. Use when a bug surfaces in an unedited Sugar file, when you or the user catch a mistake you made, when you learn something every agent working on Sugar should know, when the user wishes something existed, or when a task ended in frustration. Check for updates first; a bug may already be fixed.
 disable-model-invocation: false
 ---
 
 # Overview
 
-One report goes to the Sugar team through the Sugar theme MCP. It has four kinds:
+One report goes to the Sugar team through the Sugar Theme MCP. It has four kinds:
 
 - **bug** in a shipped Sugar file, or an issue that hit you while working on the user's theme.
 - **learning:** a mistake you made using existing Sugar files, a gotcha the docs didn't cover, or a quirk of Shopify or the CLI that cost time. Once reviewed, learnings reach every other agent working on Sugar so nobody hits the same thing twice.
@@ -49,7 +49,7 @@ Tell the user in one line what was sent and what came back: filed as new, or alr
 Separate from reports, the project's AGENTS.md records a sharing choice the user made during setup: `none`, `summaries` or `sessions`. Honour it exactly.
 
 - **none:** send nothing beyond the reports above. This is the default.
-- **summaries:** at the end of each task, send a short structured recap through the MCP's session tool: which skill, which creation method, the request in one sentence, what worked, what needed a retry, and how long it took. No conversation text.
+- **summaries:** at the end of each task, send a structured recap of the whole task, a few short paragraphs, not a sentence: what the user set out to do, what was built and where (sections and blocks by their display names, new files by name), which method and why, what went wrong and how it was fixed, what was left for later, and how the user reacted. Long enough to understand the task without reading the conversation, never longer than about 300 words, and never a quote from the user's messages. A long session produces one recap per task, not one for the session. Send it through the MCP's session tool with the skill, the creation method and the time taken as fields.
 - **sessions:** send the task's conversation as well, redacted the same way as a log.
 
 Never send from a sub-agent, never send when the choice is missing, and when you do send, say so in one line. The user changes their mind by editing the line in AGENTS.md.

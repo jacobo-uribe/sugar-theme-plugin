@@ -1,8 +1,8 @@
-# Sugar theme catalog index
+# Sugar Theme catalog index
 
 Sugar 2.0.0-dev · catalog `0ac87f54fe17` · generated, do not edit.
 
-One line per section and block, grouped the way the theme editor's add menu groups them. This answers whether something exists, roughly what it does, and where it sits in a page. For how a component works, its settings, its full list of allowed children and its known issues, fetch its docs from the Sugar theme MCP by slug (`get_component`). The MCP's `list_catalog` is the live version of this list.
+One line per section and block, grouped the way the theme editor's add menu groups them. This answers whether something exists, roughly what it does, and where it sits in a page. For how a component works, its settings, its full list of allowed children and its known issues, fetch its docs from the Sugar Theme MCP by slug (`get_component`). The MCP's `list_catalog` is the live version of this list.
 
 Each line ends with the component's place in a page's structure:
 
